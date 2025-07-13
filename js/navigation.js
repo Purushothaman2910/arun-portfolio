@@ -117,19 +117,15 @@ class NavigationManager {
     }
 
     updateMobileMenuIcon() {
-        if (!this.mobileMenuBtn) return;
-
-        const icon = this.mobileMenuBtn.querySelector('svg');
-        if (!icon) return;
-
-        const paths = icon.querySelectorAll('path');
-
+        const hamburger = document.getElementById('icon-hamburger');
+        const close = document.getElementById('icon-close');
+        if (!hamburger || !close) return;
         if (this.isMobileMenuOpen) {
-            // Show close icon (X)
-            paths[0].setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            hamburger.classList.add('hidden');
+            close.classList.remove('hidden');
         } else {
-            // Show hamburger icon
-            paths[0].setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            hamburger.classList.remove('hidden');
+            close.classList.add('hidden');
         }
     }
 
