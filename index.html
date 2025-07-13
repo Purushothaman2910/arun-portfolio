@@ -6,6 +6,11 @@
     <meta name="description" content="Business Portfolio Website" />
     <title>Business Portfolio</title>
 
+    <!-- Boxicons CDN -->
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -124,7 +129,7 @@
           class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between"
         >
           <!-- Left: Text Content -->
-          <div class="md:w-1/2 text-left">
+          <div class="md:w-1/2 text-left animate-slide-up">
             <h1
               class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-gray-900 dark:text-white drop-shadow-lg"
               style="text-shadow: 2px 2px 0 #374151"
@@ -159,7 +164,9 @@
             </div>
           </div>
           <!-- Right: Image Content -->
-          <div class="md:w-1/2 flex justify-center mt-12 md:mt-0">
+          <div
+            class="md:w-1/2 flex justify-center mt-12 md:mt-0 animate-slide-down"
+          >
             <div
               class="relative bg-white rounded-3xl shadow-xl p-8 flex items-center justify-center"
               style="min-width: 340px; min-height: 400px"
@@ -206,6 +213,30 @@
           </div>
         </div>
       </section>
+      <!-- Stats Card -->
+      <div class="stats-card">
+        <div class="stat">
+          <div class="stat-icon"><i class="bx bxs-group"></i></div>
+          <div class="stat-number" data-target="100">0</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon"><i class="bx bxs-briefcase"></i></div>
+          <div class="stat-number" data-target="98">0</div>
+          <div class="stat-label">Projects Complete</div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon"><i class="bx bxs-timer"></i></div>
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon"><i class="bx bxs-headphone"></i></div>
+          <div class="stat-number" data-target="90">0</div>
+          <div class="stat-label">Premium Support</div>
+        </div>
+      </div>
+      <!-- End Stats Card -->
 
       <!-- About Section -->
       <section
@@ -220,23 +251,31 @@
               </h2>
               <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h3 class="text-2xl font-semibold mb-4">Your Story</h3>
+                  <h3 class="text-3xl font-semibold mb-4">
+                    Why to choose us ?
+                  </h3>
                   <p class="text-gray-600 dark:text-gray-300 mb-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Where innovation meets results. We specialize in delivering
+                    impactful digital solutions through expert strategies in
+                    Digital Marketing, SEO, Google & Meta Ads, and Social Media
+                    Marketing — all tailored to grow your brand and reach the
+                    right audience.
                   </p>
                   <p class="text-gray-600 dark:text-gray-300">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat.
+                    From cutting-edge Web Development and Website Design to
+                    engaging UI/UX, Graphic Design, Video Marketing, and Content
+                    Writing — our services are crafted to elevate your online
+                    presence and drive measurable success.
                   </p>
                 </div>
                 <div
-                  class="bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center"
+                  class="bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center rounded-xl"
                 >
-                  <span class="text-gray-500 dark:text-gray-400"
-                    >Image Placeholder</span
-                  >
+                  <img
+                    src="./assets/about-image.jpeg"
+                    alt=""
+                    class="rounded-xl"
+                  />
                 </div>
               </div>
             </div>
@@ -252,49 +291,28 @@
         <div class="container mx-auto p-4 sm:px-6 lg:p-8">
           <div class="max-w-6xl mx-auto">
             <div class="animate-slide-up">
-              <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">
+              <h2
+                class="text-3xl sm:text-4xl font-bold text-center mb-12 scroll-animate"
+              >
                 Our Services
               </h2>
               <div class="grid md:grid-cols-3 gap-8">
-                <div class="service-card scroll-animate">
+                <div class="service-card scroll-animate animate-stagger-1">
                   <div
-                    class="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4"
+                    class="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
-                    <svg
-                      class="w-8 h-8 text-blue-600 dark:text-blue-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
+                    <i class="bxr bx-thunder"></i>
                   </div>
                   <h3 class="text-xl font-semibold mb-3">Service 1</h3>
                   <p class="text-gray-600 dark:text-gray-300">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </p>
                 </div>
-                <div class="service-card scroll-animate">
+                <div class="service-card scroll-animate animate-stagger-2">
                   <div
-                    class="bg-green-100 dark:bg-green-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4"
+                    class="bg-green-100 dark:bg-green-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
-                    <svg
-                      class="w-8 h-8 text-green-600 dark:text-green-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
+                  <i class='bxr  bx-check-circle'  ></i> 
                     </svg>
                   </div>
                   <h3 class="text-xl font-semibold mb-3">Service 2</h3>
@@ -302,7 +320,7 @@
                     Sed do eiusmod tempor incididunt ut labore et dolore.
                   </p>
                 </div>
-                <div class="service-card scroll-animate">
+                <div class="service-card scroll-animate animate-stagger-3">
                   <div
                     class="bg-purple-100 dark:bg-purple-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4"
                   >
@@ -326,7 +344,7 @@
                   </p>
                 </div>
 
-                <div class="service-card scroll-animate">
+                <div class="service-card scroll-animate animate-stagger-4">
                   <div
                     class="bg-purple-100 dark:bg-purple-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4"
                   >
@@ -349,7 +367,7 @@
                     Ut enim ad minim veniam, quis nostrud exercitation.
                   </p>
                 </div>
-                <div class="service-card scroll-animate">
+                <div class="service-card scroll-animate animate-stagger-5">
                   <div
                     class="bg-purple-100 dark:bg-purple-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4"
                   >

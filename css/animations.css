@@ -1,4 +1,12 @@
-/* Animation Keyframes */
+/* 
+ * FIXED ANIMATIONS.CSS
+ * This file contains all the animation keyframes and classes
+ * Think of keyframes as "recipes" for how elements should move
+ */
+
+/* ============= KEYFRAME ANIMATIONS ============= */
+/* These are like "recipes" that tell the browser how to animate */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -14,7 +22,19 @@
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
     }
 
     to {
@@ -50,7 +70,7 @@
 @keyframes scaleIn {
     from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.8);
     }
 
     to {
@@ -66,20 +86,20 @@
     53%,
     80%,
     100% {
-        transform: translate3d(0, 0, 0);
+        transform: translateY(0);
     }
 
     40%,
     43% {
-        transform: translate3d(0, -8px, 0);
+        transform: translateY(-8px);
     }
 
     70% {
-        transform: translate3d(0, -4px, 0);
+        transform: translateY(-4px);
     }
 
     90% {
-        transform: translate3d(0, -2px, 0);
+        transform: translateY(-2px);
     }
 }
 
@@ -94,16 +114,6 @@
 
     100% {
         transform: scale(1);
-    }
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: -200px 0;
-    }
-
-    100% {
-        background-position: calc(200px + 100%) 0;
     }
 }
 
@@ -129,27 +139,46 @@
     }
 }
 
-/* Animation Classes */
-.animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+/* ============= ANIMATION CLASSES ============= */
+/* These classes can be added to HTML elements to animate them */
+
+/* Initial state - elements start invisible */
+.animate-fade-in,
+.animate-slide-up,
+.animate-slide-down,
+.animate-slide-left,
+.animate-slide-right,
+.animate-scale-in,
+.scroll-animate {
+    opacity: 0;
 }
 
-.animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
+/* When 'active' class is added, the animation plays */
+.animate-fade-in.active {
+    animation: fadeIn 1s ease-out 0.5s forwards;
 }
 
-.animate-slide-left {
-    animation: slideInLeft 0.8s ease-out forwards;
+.animate-slide-up.active {
+    animation: slideUp 1s ease-out 0.5s forwards;
 }
 
-.animate-slide-right {
-    animation: slideInRight 0.8s ease-out forwards;
+.animate-slide-down.active {
+    animation: slideDown 1s ease-out 0.5s forwards;
 }
 
-.animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
+.animate-slide-left.active {
+    animation: slideInLeft 1s ease-out 0.5s forwards;
 }
 
+.animate-slide-right.active {
+    animation: slideInRight 1s ease-out 0.5s forwards;
+}
+
+.animate-scale-in.active {
+    animation: scaleIn 0.6s ease-out 0.5s forwards;
+}
+
+/* Continuous animations (these run forever) */
 .animate-bounce {
     animation: bounce 1s ease-in-out;
 }
@@ -166,28 +195,32 @@
     animation: rotate 2s linear infinite;
 }
 
-/* Staggered Animations */
-.animate-stagger-1 {
+/* ============= STAGGERED ANIMATIONS ============= */
+/* These create a "wave" effect where elements animate one after another */
+
+.animate-stagger-1.active {
     animation-delay: 0.1s;
 }
 
-.animate-stagger-2 {
+.animate-stagger-2.active {
     animation-delay: 0.2s;
 }
 
-.animate-stagger-3 {
+.animate-stagger-3.active {
     animation-delay: 0.3s;
 }
 
-.animate-stagger-4 {
+.animate-stagger-4.active {
     animation-delay: 0.4s;
 }
 
-.animate-stagger-5 {
+.animate-stagger-5.active {
     animation-delay: 0.5s;
 }
 
-/* Hover Animations */
+/* ============= HOVER ANIMATIONS ============= */
+/* These animations happen when you hover over elements */
+
 .hover-lift {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -213,19 +246,9 @@
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
-/* Loading Animations */
-.loading-shimmer {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200px 100%;
-    animation: shimmer 1.5s infinite;
-}
+/* ============= SCROLL-TRIGGERED ANIMATIONS ============= */
+/* These animations happen when elements come into view */
 
-.dark .loading-shimmer {
-    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
-    background-size: 200px 100%;
-}
-
-/* Scroll-triggered Animations */
 .scroll-animate {
     opacity: 0;
     transform: translateY(30px);
@@ -237,18 +260,25 @@
     transform: translateY(0);
 }
 
-/* Typography Animations */
-.text-reveal {
-    overflow: hidden;
+/* ============= CARD ANIMATIONS ============= */
+/* Special animations for cards (service cards, portfolio cards, etc.) */
+
+.service-card,
+.portfolio-card,
+.team-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.text-reveal span {
-    display: inline-block;
-    transform: translateY(100%);
-    animation: slideUp 0.6s ease forwards;
+.service-card:hover,
+.portfolio-card:hover,
+.team-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Button Animations */
+/* ============= BUTTON ANIMATIONS ============= */
+/* Nice effects for buttons */
+
 .btn-animate {
     position: relative;
     overflow: hidden;
@@ -269,17 +299,9 @@
     left: 100%;
 }
 
-/* Card Animations */
-.card-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* ============= NAVIGATION ANIMATIONS ============= */
+/* Cool underline effect for navigation links */
 
-.card-hover:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* Navigation Animations */
 .nav-item {
     position: relative;
     transition: color 0.3s ease;
@@ -292,7 +314,8 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: #3b82f6;
+    /* blue color */
     transition: width 0.3s ease;
 }
 
@@ -301,12 +324,31 @@
     width: 100%;
 }
 
-/* Theme Transition */
+/* ============= THEME TRANSITION ============= */
+/* Smooth transition when switching between light and dark mode */
+
 .theme-transition {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Responsive Animations */
+/* ============= RESPONSIVE DESIGN ============= */
+/* Adjust animations for smaller screens */
+
+@media (max-width: 768px) {
+    .animate-slide-up.active {
+        animation-duration: 0.6s;
+    }
+
+    .service-card:hover,
+    .portfolio-card:hover,
+    .team-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+}
+
+/* ============= ACCESSIBILITY ============= */
+/* Respect users who prefer reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
 
     *,
@@ -315,15 +357,5 @@
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .animate-slide-up {
-        animation-duration: 0.6s;
-    }
-
-    .card-hover:hover {
-        transform: translateY(-4px) scale(1.01);
     }
 }
