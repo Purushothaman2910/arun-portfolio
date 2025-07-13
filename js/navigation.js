@@ -1,240 +1,182 @@
 /**
- * Navigation Management
- * Handles smooth scrolling, mobile menu, and active navigation states
+ * Simple Navigation Menu Handler
+ * Focuses only on menu bar opening/closing and hamburger icon toggle
  */
 
-class NavigationManager {
+class SimpleNavigationManager {
     constructor() {
-        this.header = document.querySelector('header');
         this.mobileMenuBtn = document.getElementById('mobile-menu-btn');
         this.mobileMenu = document.getElementById('mobile-menu');
-        this.navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
-        this.sections = document.querySelectorAll('section[id]');
+        this.hamburgerIcon = document.getElementById('icon-hamburger');
+        this.closeIcon = document.getElementById('icon-close');
+        this.mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        this.isMobileMenuOpen = false;
-        this.scrollThreshold = 100;
+        this.isMenuOpen = false;
 
         this.init();
     }
 
     init() {
         this.setupEventListeners();
-        this.setupIntersectionObserver();
-        this.handleInitialScroll();
+        this.ensureInitialState();
     }
 
     setupEventListeners() {
-        // Mobile menu toggle
+        // Mobile menu toggle button
         if (this.mobileMenuBtn) {
-            this.mobileMenuBtn.addEventListener('click', () => this.toggleMobileMenu());
-        }
-
-        // Navigation links
-        this.navLinks.forEach(link => {
-            link.addEventListener('click', (e) => this.handleNavClick(e));
-        });
-
-        // Scroll events
-        window.addEventListener('scroll', () => this.handleScroll());
-
-        // Resize events
-        window.addEventListener('resize', () => this.handleResize());
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => this.handleOutsideClick(e));
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => this.handleKeydown(e));
-    }
-
-    setupIntersectionObserver() {
-        const options = {
-            root: null,
-            rootMargin: '-20% 0px -80% 0px',
-            threshold: 0
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    this.updateActiveNav(entry.target.id);
-                }
+            this.mobileMenuBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleMobileMenu();
             });
-        }, options);
-
-        this.sections.forEach(section => {
-            observer.observe(section);
-        });
-    }
-
-    handleNavClick(e) {
-        e.preventDefault();
-
-        const targetId = e.target.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-            this.scrollToSection(targetSection);
-            this.closeMobileMenu();
         }
-    }
 
-    scrollToSection(section) {
-        const headerHeight = this.header ? this.header.offsetHeight : 0;
-        const targetPosition = section.offsetTop - headerHeight - 20;
+        // Close menu when clicking on mobile nav links
+        this.mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                this.closeMobileMenu();
+            });
+        });
 
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.isMenuOpen &&
+                !this.mobileMenu.contains(e.target) &&
+                !this.mobileMenuBtn.contains(e.target)) {
+                this.closeMobileMenu();
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isMenuOpen) {
+                this.closeMobileMenu();
+            }
+        });
+
+        // Close menu on window resize to desktop size
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768 && this.isMenuOpen) {
+                this.closeMobileMenu();
+            }
         });
     }
 
     toggleMobileMenu() {
-        this.isMobileMenuOpen = !this.isMobileMenuOpen;
+        if (this.isMenuOpen) {
+            this.closeMobileMenu();
+        } else {
+            this.openMobileMenu();
+        }
+    }
 
+    openMobileMenu() {
+        this.isMenuOpen = true;
+
+        // Show mobile menu
         if (this.mobileMenu) {
-            this.mobileMenu.classList.toggle('hidden', !this.isMobileMenuOpen);
+            this.mobileMenu.classList.remove('hidden');
         }
 
-        // Update button icon
-        this.updateMobileMenuIcon();
+        // Update icons
+        this.updateIcons();
 
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
+        // Prevent body scrolling
+        document.body.style.overflow = 'hidden';
+
+        // console.log('Mobile menu opened');
     }
 
     closeMobileMenu() {
-        if (this.isMobileMenuOpen) {
-            this.isMobileMenuOpen = false;
+        this.isMenuOpen = false;
 
-            if (this.mobileMenu) {
-                this.mobileMenu.classList.add('hidden');
-            }
-
-            this.updateMobileMenuIcon();
-            document.body.style.overflow = '';
+        // Hide mobile menu
+        if (this.mobileMenu) {
+            this.mobileMenu.classList.add('hidden');
         }
+
+        // Update icons
+        this.updateIcons();
+
+        // Restore body scrolling
+        document.body.style.overflow = '';
+
+        // console.log('Mobile menu closed');
     }
 
-    updateMobileMenuIcon() {
-        const hamburger = document.getElementById('icon-hamburger');
-        const close = document.getElementById('icon-close');
-        if (!hamburger || !close) return;
-        if (this.isMobileMenuOpen) {
-            hamburger.classList.add('hidden');
-            close.classList.remove('hidden');
+    updateIcons() {
+        if (!this.hamburgerIcon || !this.closeIcon) return;
+
+        if (this.isMenuOpen) {
+            // Show close icon, hide hamburger
+            this.hamburgerIcon.classList.add('hidden');
+            this.closeIcon.classList.remove('hidden');
         } else {
-            hamburger.classList.remove('hidden');
-            close.classList.add('hidden');
+            // Show hamburger, hide close icon
+            this.hamburgerIcon.classList.remove('hidden');
+            this.closeIcon.classList.add('hidden');
         }
     }
 
-    handleScroll() {
-        const scrollY = window.scrollY;
+    ensureInitialState() {
+        // Ensure menu starts closed
+        this.isMenuOpen = false;
 
-        // Add/remove scrolled class to header
-        if (this.header) {
-            if (scrollY > this.scrollThreshold) {
-                this.header.classList.add('scrolled');
-            } else {
-                this.header.classList.remove('scrolled');
-            }
+        if (this.mobileMenu) {
+            this.mobileMenu.classList.add('hidden');
         }
 
-        // Close mobile menu on scroll
-        if (this.isMobileMenuOpen && scrollY > 50) {
-            this.closeMobileMenu();
-        }
+        // Ensure correct initial icon state
+        this.updateIcons();
+
+        // Ensure body scrolling is enabled
+        document.body.style.overflow = '';
     }
 
-    handleResize() {
-        // Close mobile menu on resize if screen becomes larger
-        if (window.innerWidth >= 768 && this.isMobileMenuOpen) {
-            this.closeMobileMenu();
-        }
+    // Public methods for external use
+    isOpen() {
+        return this.isMenuOpen;
     }
 
-    handleOutsideClick(e) {
-        if (this.isMobileMenuOpen &&
-            !this.mobileMenu?.contains(e.target) &&
-            !this.mobileMenuBtn?.contains(e.target)) {
-            this.closeMobileMenu();
-        }
+    forceClose() {
+        this.closeMobileMenu();
     }
 
-    handleKeydown(e) {
-        // Close mobile menu on Escape key
-        if (e.key === 'Escape' && this.isMobileMenuOpen) {
-            this.closeMobileMenu();
-        }
-    }
-
-    updateActiveNav(sectionId) {
-        // Remove active class from all nav links
-        this.navLinks.forEach(link => {
-            link.classList.remove('active');
-        });
-
-        // Add active class to current section's nav link
-        const activeLink = document.querySelector(`[href="#${sectionId}"]`);
-        if (activeLink) {
-            activeLink.classList.add('active');
-        }
-    }
-
-    handleInitialScroll() {
-        // Set initial active nav based on current scroll position
-        const scrollY = window.scrollY;
-        const headerHeight = this.header ? this.header.offsetHeight : 0;
-
-        for (let i = this.sections.length - 1; i >= 0; i--) {
-            const section = this.sections[i];
-            const sectionTop = section.offsetTop - headerHeight - 100;
-
-            if (scrollY >= sectionTop) {
-                this.updateActiveNav(section.id);
-                break;
-            }
-        }
-    }
-
-    // Public method to scroll to a specific section
-    scrollToSectionById(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            this.scrollToSection(section);
-        }
-    }
-
-    // Public method to get current active section
-    getCurrentSection() {
-        const scrollY = window.scrollY;
-        const headerHeight = this.header ? this.header.offsetHeight : 0;
-
-        for (let i = this.sections.length - 1; i >= 0; i--) {
-            const section = this.sections[i];
-            const sectionTop = section.offsetTop - headerHeight - 100;
-
-            if (scrollY >= sectionTop) {
-                return section.id;
-            }
-        }
-
-        return null;
-    }
-
-    // Public method to check if mobile menu is open
-    isMobileMenuOpen() {
-        return this.isMobileMenuOpen;
+    // Debug method
+    debug() {
+        console.log('Navigation Debug Info:');
+        console.log('- Menu button:', this.mobileMenuBtn);
+        console.log('- Mobile menu:', this.mobileMenu);
+        console.log('- Hamburger icon:', this.hamburgerIcon);
+        console.log('- Close icon:', this.closeIcon);
+        console.log('- Menu is open:', this.isMenuOpen);
+        console.log('- Menu classes:', this.mobileMenu?.className);
     }
 }
 
-// Initialize navigation manager when DOM is loaded
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    window.navigationManager = new NavigationManager();
+    // Clear any existing navigation manager
+    if (window.navigationManager) {
+        window.navigationManager = null;
+    }
+
+    // Create new simple navigation manager
+    window.simpleNav = new SimpleNavigationManager();
+
+    // console.log('Simple navigation manager initialized');
 });
 
-// Export for module usage
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = NavigationManager;
-} 
+// Fallback initialization if DOM is already loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!window.simpleNav) {
+            window.simpleNav = new SimpleNavigationManager();
+        }
+    });
+} else {
+    // DOM is already loaded
+    if (!window.simpleNav) {
+        window.simpleNav = new SimpleNavigationManager();
+    }
+}
