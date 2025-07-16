@@ -149,33 +149,36 @@
 .animate-slide-left,
 .animate-slide-right,
 .animate-scale-in,
-.scroll-animate {
+.scroll-animate,
+.hero-animate-slide-up,
+.hero-animate-slide-down,
+.hero-animate-fade-in {
     opacity: 0;
 }
 
 /* When 'active' class is added, the animation plays */
 .animate-fade-in.active {
-    animation: fadeIn 1s ease-out 0.5s forwards;
+    animation: fadeIn 1.5s ease-out 0.3s forwards;
 }
 
 .animate-slide-up.active {
-    animation: slideUp 1s ease-out 0.5s forwards;
+    animation: slideUp 1.8s ease-out 0.3s forwards;
 }
 
 .animate-slide-down.active {
-    animation: slideDown 1s ease-out 0.5s forwards;
+    animation: slideDown 1.8s ease-out 0.3s forwards;
 }
 
 .animate-slide-left.active {
-    animation: slideInLeft 1s ease-out 0.5s forwards;
+    animation: slideInLeft 1.5s ease-out 0.3s forwards;
 }
 
 .animate-slide-right.active {
-    animation: slideInRight 1s ease-out 0.5s forwards;
+    animation: slideInRight 1.5s ease-out 0.3s forwards;
 }
 
 .animate-scale-in.active {
-    animation: scaleIn 0.6s ease-out 0.5s forwards;
+    animation: scaleIn 1s ease-out 0.3s forwards;
 }
 
 /* Continuous animations (these run forever) */
@@ -199,30 +202,30 @@
 /* These create a "wave" effect where elements animate one after another */
 
 .animate-stagger-1.active {
-    animation-delay: 0.1s;
-}
-
-.animate-stagger-2.active {
     animation-delay: 0.2s;
 }
 
-.animate-stagger-3.active {
-    animation-delay: 0.3s;
-}
-
-.animate-stagger-4.active {
+.animate-stagger-2.active {
     animation-delay: 0.4s;
 }
 
+.animate-stagger-3.active {
+    animation-delay: 0.6s;
+}
+
+.animate-stagger-4.active {
+    animation-delay: 0.8s;
+}
+
 .animate-stagger-5.active {
-    animation-delay: 0.5s;
+    animation-delay: 1s;
 }
 
 /* ============= HOVER ANIMATIONS ============= */
 /* These animations happen when you hover over elements */
 
 .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .hover-lift:hover {
@@ -231,7 +234,7 @@
 }
 
 .hover-scale {
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .hover-scale:hover {
@@ -239,7 +242,7 @@
 }
 
 .hover-glow {
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.5s ease;
 }
 
 .hover-glow:hover {
@@ -252,7 +255,7 @@
 .scroll-animate {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .scroll-animate.animate {
@@ -266,7 +269,7 @@
 .service-card,
 .portfolio-card,
 .team-card {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-card:hover,
@@ -331,18 +334,46 @@
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* ============= HERO SECTION ANIMATIONS ============= */
+/* Special slower animations for the hero section */
+
+.hero-animate-slide-up.active {
+    animation: slideUp 2.5s ease-out 0.5s forwards;
+}
+
+.hero-animate-slide-down.active {
+    animation: slideDown 2.5s ease-out 0.5s forwards;
+}
+
+.hero-animate-fade-in.active {
+    animation: fadeIn 2s ease-out 0.5s forwards;
+}
+
 /* ============= RESPONSIVE DESIGN ============= */
 /* Adjust animations for smaller screens */
 
 @media (max-width: 768px) {
     .animate-slide-up.active {
-        animation-duration: 0.6s;
+        animation-duration: 1.2s;
+    }
+
+    .hero-animate-slide-up.active {
+        animation-duration: 2s;
+    }
+
+    .hero-animate-slide-down.active {
+        animation-duration: 2s;
     }
 
     .service-card:hover,
     .portfolio-card:hover,
     .team-card:hover {
         transform: translateY(-4px) scale(1.01);
+    }
+
+    .learn-more-btn {
+        padding: 8px 16px;
+        font-size: 13px;
     }
 }
 
@@ -358,4 +389,162 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* ============= SERVICE CARD STAGGER ANIMATION ============= */
+/* Simple stagger animation for service cards */
+
+.service-stagger-container {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.service-stagger-container.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.service-stagger-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for service cards */
+.service-stagger-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.service-stagger-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.service-stagger-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.service-stagger-item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.service-stagger-item:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.service-stagger-item:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+/* ============= LEARN MORE BUTTON STYLING ============= */
+/* Styling for the learn more buttons in service cards */
+
+.learn-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    margin-top: auto;
+}
+
+.learn-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.learn-more-btn:active {
+    transform: translateY(0);
+}
+
+.learn-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.learn-more-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Dark mode support for learn more button */
+.dark .learn-more-btn {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.dark .learn-more-btn:hover {
+    background: linear-gradient(135deg, #5855eb, #4338ca);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ============= SERVICE CARD ENHANCEMENTS ============= */
+/* Improved styling for service cards */
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.02) 0%, rgba(139, 92, 246, 0.02) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.dark .service-card {
+    background: #1f2937;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+.dark .service-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.service-icon {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
 }

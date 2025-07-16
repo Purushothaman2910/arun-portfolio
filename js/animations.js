@@ -36,8 +36,8 @@ class AnimationManager {
     setupIntersectionObserver() {
         const options = {
             root: null, // Use the viewport as the root
-            rootMargin: '0px 0px -100px 0px', // Start animation 100px before element is fully visible
-            threshold: 0.1 // Trigger when 10% of element is visible
+            rootMargin: '0px 0px -50px 0px', // Start animation 50px before element is fully visible
+            threshold: 0.2 // Trigger when 20% of element is visible
         };
 
         // Create the observer
@@ -67,7 +67,11 @@ class AnimationManager {
             '.animate-slide-left',
             '.animate-slide-right',
             '.animate-scale-in',
-            '.scroll-animate'
+            '.scroll-animate',
+            '.hero-animate-slide-up',
+            '.hero-animate-slide-down',
+            '.hero-animate-fade-in',
+            '.service-stagger-container'
         ];
 
         // Find all elements with these classes
@@ -101,6 +105,10 @@ class AnimationManager {
         // Add 'active' class to trigger CSS animation
         if (element.classList.contains('scroll-animate')) {
             element.classList.add('animate');
+        } else if (element.classList.contains('service-stagger-container')) {
+            // Handle service stagger animation
+            element.classList.add('animate');
+            this.animateServiceStagger(element);
         } else {
             element.classList.add('active');
         }
@@ -123,6 +131,20 @@ class AnimationManager {
         }
 
         // console.log('Animating element:', element.className);
+    }
+
+    /**
+     * ANIMATE SERVICE STAGGER
+     * Handles the stagger animation for service cards
+     */
+    animateServiceStagger(container) {
+        const serviceItems = container.querySelectorAll('.service-stagger-item');
+
+        serviceItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('animate');
+            }, index * 100); // 100ms delay between each item
+        });
     }
 
     /**
