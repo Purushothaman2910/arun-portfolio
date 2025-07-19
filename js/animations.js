@@ -273,7 +273,7 @@ class AnimationManager {
                     this.animateCounter(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 1.0, root: null, rootMargin: '0px' });
 
         counters.forEach(counter => {
             counterObserver.observe(counter);
@@ -299,7 +299,7 @@ class AnimationManager {
 
         if (isNaN(target)) return;
 
-        const duration = 2000; // 2 seconds
+        const duration = 5000; // 2 seconds
         const startTime = Date.now();
 
         const updateCounter = () => {

@@ -49,6 +49,7 @@
     transition: transform 0.3s ease;
 }
 
+
 .service-card:hover .service-icon {
     transform: scale(1.1) rotate(5deg);
 }
@@ -212,6 +213,7 @@
 
 .stats-card {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     background: #fff;
@@ -428,7 +430,7 @@
 }
 
 /* Responsive Components */
-@media (max-width: 768px) {
+@media (max-width: 425px) {
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
@@ -452,6 +454,11 @@
     .service-icon {
         width: 48px;
         height: 48px;
+    }
+
+    .stats-card {
+        flex-flow: column nowrap;
+        max-width: 300px;
     }
 
     .stat-number {

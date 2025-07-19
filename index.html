@@ -131,8 +131,8 @@
           <!-- Left: Text Content -->
           <div class="md:w-1/2 text-left hero-animate-slide-up">
             <h1
-              class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-gray-900 dark:text-white drop-shadow-lg"
-              style="text-shadow: 2px 2px 0 #374151"
+              class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-gray-900 dark:text-white"
+              style="text-shadow: 1px 1px 0 #374151"
             >
               Unlock Your Potential<br />
               with AK Creative Studio
@@ -217,22 +217,33 @@
       <div class="stats-card">
         <div class="stat">
           <div class="stat-icon"><i class="bx bxs-group"></i></div>
-          <div class="stat-number" data-target="100">0</div>
+          <div class="flex flex-row">
+            <div class="stat-number" data-target="100">0</div>
+            <div class="stat-number counted">+</div>
+          </div>
           <div class="stat-label">Happy Customers</div>
         </div>
         <div class="stat">
           <div class="stat-icon"><i class="bx bxs-briefcase"></i></div>
-          <div class="stat-number" data-target="98">0</div>
+          <div class="flex flex-row">
+            <div class="stat-number" data-target="98">0</div>
+            <div class="stat-number counted">+</div>
+          </div>
           <div class="stat-label">Projects Complete</div>
         </div>
         <div class="stat">
           <div class="stat-icon"><i class="bx bxs-timer"></i></div>
-          <div class="stat-number" data-target="50">0</div>
+          <div class="flex flex-row">
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-number counted">+</div>
+          </div>
           <div class="stat-label">Years Experience</div>
         </div>
         <div class="stat">
           <div class="stat-icon"><i class="bx bxs-headphone"></i></div>
-          <div class="stat-number counted">24/7</div>
+          <div class="flex flex-row">
+            <div class="stat-number">24</div>
+          </div>
           <div class="stat-label">Premium Support</div>
         </div>
       </div>
@@ -296,8 +307,10 @@
               >
                 Our Services
               </h2>
-              <div class="grid md:grid-cols-3 gap-8 service-stagger-container">
-                <div class="service-card service-stagger-item">
+              <div class="grid md:grid-cols-3 gap-8">
+                <div
+                  class="service-card service-stagger-item slide-up scroll-animate"
+                >
                   <div
                     class="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
@@ -316,7 +329,9 @@
                   </button>
                 </div>
 
-                <div class="service-card service-stagger-item">
+                <div
+                  class="service-card service-stagger-item slide-up scroll-animate"
+                >
                   <div
                     class="bg-green-100 dark:bg-green-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
@@ -335,7 +350,9 @@
                   </button>
                 </div>
 
-                <div class="service-card service-stagger-item">
+                <div
+                  class="service-card service-stagger-item slide-up scroll-animate"
+                >
                   <div
                     class="bg-purple-100 dark:bg-purple-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
@@ -354,7 +371,9 @@
                   </button>
                 </div>
 
-                <div class="service-card service-stagger-item">
+                <div
+                  class="service-card service-stagger-item slide-up scroll-animate"
+                >
                   <div
                     class="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
@@ -373,7 +392,9 @@
                   </button>
                 </div>
 
-                <div class="service-card service-stagger-item">
+                <div
+                  class="service-card service-stagger-item slide-up scroll-animate"
+                >
                   <div
                     class="bg-red-100 dark:bg-red-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
@@ -392,7 +413,9 @@
                   </button>
                 </div>
 
-                <div class="service-card service-stagger-item">
+                <div
+                  class="service-card service-stagger-item slide-up scroll-animate"
+                >
                   <div
                     class="bg-indigo-100 dark:bg-indigo-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
@@ -409,6 +432,248 @@
                     <span>Learn More</span>
                     <i class="bx bx-right-arrow-alt"></i>
                   </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us Section -->
+      <section
+        class="why-choose-us-section py-24 flex items-center justify-center bg-white dark:bg-gray-800"
+      >
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <!-- Left: Text Content -->
+              <div class="why-choose-content slide-up scroll-animate">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                  <span class="text-gray-900 dark:text-white">Why</span>
+                  <span class="text-[var(--primary-color)]">Choose Us?</span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                  Choose us for affordable, customized solutions that meet your
+                  needs. Our skilled team delivers top-quality results with a
+                  commitment to transparency.
+                </p>
+
+                <!-- Benefits List -->
+                <div class="space-y-6">
+                  <div class="flex items-start space-x-4 benefit-item">
+                    <div
+                      class="flex-shrink-0 w-8 h-8 bg-[var(--primary-color)]/10 dark:bg-[var(--primary-color)]/20 rounded-lg flex items-center justify-center"
+                    >
+                      <i
+                        class="bx bx-dollar text-[var(--primary-color)] text-lg"
+                      ></i>
+                    </div>
+                    <div>
+                      <h3
+                        class="text-lg font-semibold text-gray-900 dark:text-white mb-1"
+                      >
+                        Affordable Prices
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Competitive pricing without compromising on quality
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-4 benefit-item">
+                    <div
+                      class="flex-shrink-0 w-8 h-8 bg-[var(--primary-color)]/10 dark:bg-[var(--primary-color)]/20 rounded-lg flex items-center justify-center"
+                    >
+                      <i
+                        class="bx bx-bulb text-[var(--primary-color)] text-lg"
+                      ></i>
+                    </div>
+                    <div>
+                      <h3
+                        class="text-lg font-semibold text-gray-900 dark:text-white mb-1"
+                      >
+                        Tailored Solutions
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Custom strategies designed for your specific needs
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-4 benefit-item">
+                    <div
+                      class="flex-shrink-0 w-8 h-8 bg-[var(--primary-color)]/10 dark:bg-[var(--primary-color)]/20 rounded-lg flex items-center justify-center"
+                    >
+                      <i
+                        class="bx bx-group text-[var(--primary-color)] text-lg"
+                      ></i>
+                    </div>
+                    <div>
+                      <h3
+                        class="text-lg font-semibold text-gray-900 dark:text-white mb-1"
+                      >
+                        Expert Team
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Skilled professionals with years of experience
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-4 benefit-item">
+                    <div
+                      class="flex-shrink-0 w-8 h-8 bg-[var(--primary-color)]/10 dark:bg-[var(--primary-color)]/20 rounded-lg flex items-center justify-center"
+                    >
+                      <i
+                        class="bx bx-user-check text-[var(--primary-color)] text-lg"
+                      ></i>
+                    </div>
+                    <div>
+                      <h3
+                        class="text-lg font-semibold text-gray-900 dark:text-white mb-1"
+                      >
+                        End-to-End Service
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Complete solutions from concept to delivery
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-4 benefit-item">
+                    <div
+                      class="flex-shrink-0 w-8 h-8 bg-[var(--primary-color)]/10 dark:bg-[var(--primary-color)]/20 rounded-lg flex items-center justify-center"
+                    >
+                      <i
+                        class="bx bx-check-shield text-[var(--primary-color)] text-lg"
+                      ></i>
+                    </div>
+                    <div>
+                      <h3
+                        class="text-lg font-semibold text-gray-900 dark:text-white mb-1"
+                      >
+                        100% Transparent
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Clear communication and honest pricing
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Visual Content -->
+              <div class="why-choose-visual slide-up scroll-animate">
+                <div class="relative">
+                  <!-- Primary Color Background -->
+                  <div
+                    class="bg-[var(--primary-color)] dark:bg-[var(--primary-color)] rounded-3xl p-8 shadow-2xl"
+                  >
+                    <!-- Instagram Post Frame -->
+                    <div
+                      class="bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto"
+                    >
+                      <!-- Post Header -->
+                      <div
+                        class="flex items-center justify-between p-4 border-b border-gray-200"
+                      >
+                        <div class="flex items-center space-x-3">
+                          <div
+                            class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center"
+                          >
+                            <span class="text-xs font-semibold text-gray-600"
+                              >STAY</span
+                            >
+                          </div>
+                          <span class="text-sm font-semibold text-gray-900"
+                            >deal_with_digital_world</span
+                          >
+                        </div>
+                        <div class="flex space-x-1">
+                          <div class="w-1 h-1 bg-gray-400 rounded-full"></div>
+                          <div class="w-1 h-1 bg-gray-400 rounded-full"></div>
+                          <div class="w-1 h-1 bg-gray-400 rounded-full"></div>
+                        </div>
+                      </div>
+
+                      <!-- Post Image -->
+                      <div class="relative">
+                        <div
+                          class="w-full h-64 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-200 dark:to-gray-300 flex items-center justify-center"
+                        >
+                          <!-- Team Meeting Illustration -->
+                          <div
+                            class="flex items-center justify-center space-x-2"
+                          >
+                            <div
+                              class="w-12 h-12 bg-blue-200 dark:bg-blue-300 rounded-full flex items-center justify-center"
+                            >
+                              <i
+                                class="bx bx-user text-blue-600 dark:text-blue-700 text-lg"
+                              ></i>
+                            </div>
+                            <div
+                              class="w-10 h-10 bg-green-200 dark:bg-green-300 rounded-full flex items-center justify-center"
+                            >
+                              <i
+                                class="bx bx-user text-green-600 dark:text-green-700 text-sm"
+                              ></i>
+                            </div>
+                            <div
+                              class="w-14 h-14 bg-purple-200 dark:bg-purple-300 rounded-full flex items-center justify-center"
+                            >
+                              <i
+                                class="bx bx-user text-purple-600 dark:text-purple-700 text-xl"
+                              ></i>
+                            </div>
+                            <div
+                              class="w-10 h-10 bg-orange-200 dark:bg-orange-300 rounded-full flex items-center justify-center"
+                            >
+                              <i
+                                class="bx bx-user text-orange-600 dark:text-orange-700 text-sm"
+                              ></i>
+                            </div>
+                            <div
+                              class="w-12 h-12 bg-red-200 dark:bg-red-300 rounded-full flex items-center justify-center"
+                            >
+                              <i
+                                class="bx bx-user text-red-600 dark:text-red-700 text-lg"
+                              ></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Post Actions -->
+                      <div class="flex items-center justify-between p-4">
+                        <div class="flex space-x-4">
+                          <i
+                            class="bx bx-heart text-xl text-gray-600 hover:text-red-500 cursor-pointer transition-colors"
+                          ></i>
+                          <i
+                            class="bx bx-message-rounded text-xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors"
+                          ></i>
+                          <i
+                            class="bx bx-send text-xl text-gray-600 hover:text-green-500 cursor-pointer transition-colors"
+                          ></i>
+                        </div>
+                        <i
+                          class="bx bx-bookmark text-xl text-gray-600 hover:text-[var(--primary-color)] cursor-pointer transition-colors"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Decorative Elements -->
+                  <div
+                    class="absolute -top-4 -left-4 w-8 h-8 bg-blue-200 dark:bg-blue-300 rounded-full opacity-60"
+                  ></div>
+                  <div
+                    class="absolute -bottom-4 -right-4 w-6 h-6 bg-green-200 dark:bg-green-300 rounded-full opacity-60"
+                  ></div>
+                  <div
+                    class="absolute top-1/2 -left-2 w-4 h-4 bg-purple-200 dark:bg-purple-300 rounded-full opacity-60"
+                  ></div>
                 </div>
               </div>
             </div>
@@ -453,7 +718,9 @@
       <section
         class="teams-section py-24 flex items-center justify-center bg-[var(--primary-color)]/10 dark:bg-[var(--accent-color)]/10"
       >
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="container mx-auto px-4 sm:px-6 lg:px-8 slide-up scroll-animate"
+        >
           <h2
             class="text-3xl sm:text-4xl font-bold text-center mb-4"
             style="color: var(--primary-color)"
@@ -470,7 +737,7 @@
           <div class="grid md:grid-cols-3 gap-10">
             <!-- Team Member 1 -->
             <div
-              class="team-card bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)] rounded-2xl shadow-xl p-8 flex flex-col items-center"
+              class="team-card bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)] rounded-2xl shadow-xl p-8 flex flex-col items-center slide-up scroll-animate service-stagger-item"
             >
               <div
                 class="w-32 h-32 rounded-full overflow-hidden mb-6"
@@ -492,7 +759,7 @@
             </div>
             <!-- Team Member 2 -->
             <div
-              class="team-card bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)] rounded-2xl shadow-xl p-8 flex flex-col items-center"
+              class="team-card bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)] rounded-2xl shadow-xl p-8 flex flex-col items-center slide-up scroll-animate service-stagger-item"
             >
               <div
                 class="w-32 h-32 rounded-full overflow-hidden mb-6"
@@ -516,7 +783,7 @@
             </div>
             <!-- Team Member 3 -->
             <div
-              class="team-card bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)] rounded-2xl shadow-xl p-8 flex flex-col items-center"
+              class="team-card bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)] rounded-2xl shadow-xl p-8 flex flex-col items-center slide-up scroll-animate service-stagger-item"
             >
               <div
                 class="w-32 h-32 rounded-full overflow-hidden mb-6"
