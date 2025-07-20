@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/animations.css" />
     <link rel="stylesheet" href="./css/components.css" />
     <link rel="stylesheet" href="./css/scroll-bar.css" />
+    <link rel="stylesheet" href="./css/testimonial.css" />
   </head>
   <body
     class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 custom-scroll"
@@ -581,12 +582,12 @@
                           <div
                             class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center"
                           >
-                            <span class="text-xs font-semibold text-gray-600"
-                              >STAY</span
-                            >
+                            <span
+                              class="text-xs font-semibold text-gray-600"
+                            ></span>
                           </div>
                           <span class="text-sm font-semibold text-gray-900"
-                            >deal_with_digital_world</span
+                            >Ak Creative Studio</span
                           >
                         </div>
                         <div class="flex space-x-1">
@@ -807,6 +808,37 @@
         </div>
       </section>
 
+      <section class="testimonials-section py-24 flex flex-col items-center justify-center dark:bg-gray-800">
+        <div class="carousel-container">
+          <button class="nav-btn prev">&#8249;</button>
+          <div class="carousel-track" id="carouselTrack"></div>
+          <button class="nav-btn next">&#8250;</button>
+        </div>
+        <div class="indicators" id="indicators"></div>
+      </div>
+    </section>
+
+      <!-- Image Modal -->
+      <div
+        id="image-modal"
+        class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4"
+      >
+        <div class="relative max-w-4xl max-h-full">
+          <button
+            id="close-modal"
+            class="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 transition-colors"
+          >
+            <i class="bx bx-x"></i>
+          </button>
+          <img
+            id="modal-image"
+            src=""
+            alt="Testimonial Image"
+            class="max-w-full max-h-full object-contain rounded-lg"
+          />
+        </div>
+      </div>
+
       <!-- Contact Section -->
       <section
         id="contact"
@@ -1002,6 +1034,7 @@
     <script src="./js/navigation.js"></script>
     <script src="./js/animations.js"></script>
     <script src="./js/typeEffect.js"></script>
+    <script src="./js/testimonials.js"></script>
     <script>
       tailwind.config = { darkMode: "class" };
     </script>
