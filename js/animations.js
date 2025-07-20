@@ -25,6 +25,11 @@ class AnimationManager {
         this.setupProgressAnimations();
         this.setupStaggeredAnimations();
 
+        // Add resize listener to update observer settings
+        window.addEventListener('resize', () => {
+            this.updateObserverSettings();
+        });
+
         // console.log('Animation Manager initialized!');
     }
 
@@ -34,10 +39,13 @@ class AnimationManager {
      * Think of it as a "lookout" that tells us when to start animations
      */
     setupIntersectionObserver() {
+        // Different settings for mobile vs desktop
+        const isMobile = window.innerWidth <= 768;
+
         const options = {
             root: null, // Use the viewport as the root
-            rootMargin: '0px 0px -50px 0px', // Start animation 50px before element is fully visible
-            threshold: 0.2 // Trigger when 20% of element is visible
+            rootMargin: isMobile ? '0px 0px -100px 0px' : '0px 0px -50px 0px', // More margin on mobile
+            threshold: isMobile ? 0.1 : 0.2 // Lower threshold for mobile
         };
 
         // Create the observer
@@ -71,7 +79,8 @@ class AnimationManager {
             '.hero-animate-slide-up',
             '.hero-animate-slide-down',
             '.hero-animate-fade-in',
-            '.service-stagger-container'
+            '.service-stagger-container',
+            '.service-card' // Add service cards specifically
         ];
 
         // Find all elements with these classes
@@ -83,6 +92,15 @@ class AnimationManager {
                 // Add to our list
                 this.animatedElements.push(element);
             });
+        });
+
+        // Also watch service cards specifically for mobile
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            if (!this.animatedElements.includes(card)) {
+                this.intersectionObserver.observe(card);
+                this.animatedElements.push(card);
+            }
         });
 
         // console.log(`Watching ${this.animatedElements.length} elements for animation`);
@@ -109,6 +127,9 @@ class AnimationManager {
             // Handle service stagger animation
             element.classList.add('animate');
             this.animateServiceStagger(element);
+        } else if (element.classList.contains('service-card')) {
+            // Handle service cards specifically
+            element.classList.add('animate');
         } else {
             element.classList.add('active');
         }
@@ -273,7 +294,7 @@ class AnimationManager {
                     this.animateCounter(entry.target);
                 }
             });
-        }, { threshold: 1.0, root: null, rootMargin: '0px' });
+        }, { threshold: 0.2, root: null, rootMargin: '0px' });
 
         counters.forEach(counter => {
             counterObserver.observe(counter);
@@ -391,6 +412,39 @@ class AnimationManager {
         });
 
         // console.log(`Set up staggered animations for ${staggerGroups.length} groups`);
+    }
+
+    /**
+     * UPDATE OBSERVER SETTINGS
+     * Updates intersection observer settings based on screen size
+     */
+    updateObserverSettings() {
+        const isMobile = window.innerWidth <= 768;
+
+        // Disconnect current observer
+        if (this.intersectionObserver) {
+            this.intersectionObserver.disconnect();
+        }
+
+        // Recreate observer with new settings
+        const options = {
+            root: null,
+            rootMargin: isMobile ? '0px 0px -100px 0px' : '0px 0px -50px 0px',
+            threshold: isMobile ? 0.1 : 0.2
+        };
+
+        this.intersectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.animateElement(entry.target);
+                }
+            });
+        }, options);
+
+        // Re-observe all elements
+        this.animatedElements.forEach(element => {
+            this.intersectionObserver.observe(element);
+        });
     }
 
     /**
