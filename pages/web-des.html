@@ -13,10 +13,16 @@
     <link rel="stylesheet" href="../css/animations.css" />
     <link rel="stylesheet" href="../css/scroll-bar.css" />
     <link rel="stylesheet" href="../css/testimonial.css" />
+    <link rel="stylesheet" href="../css/feature-cards.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = { darkMode: "class" };
     </script>
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body
     class="bg-[var(--bg-secondary)] dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 custom-scroll"
@@ -56,7 +62,7 @@
           <div class="md:w-1/2 flex justify-center">
             <!-- Illustration Placeholder -->
             <img
-              src="../../assets/web-design.svg"
+              src="../assets/web-design-image.webp"
               alt="Web Design Illustration"
               class="w-full max-w-md rounded-2xl shadow-xl"
             />
@@ -67,122 +73,88 @@
       <!-- Special Features Section -->
       <section class="py-20 bg-[var(--bg-secondary)]">
         <div class="container mx-auto px-4">
-          <h2
-            class="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white"
-          >
+          <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">
             Our Special
-            <span class="text-[var(--primary-color)] italic">Features</span>
+            <span style="color: var(--primary-color); font-style: italic"
+              >Features</span
+            >
           </h2>
-          <div class="grid md:grid-cols-3 gap-10">
+          <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <!-- Feature 1 -->
-            <div class="flex items-start gap-6">
-              <div
-                class="bg-white dark:bg-gray-800 shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl">💻</span>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-palette"></i>
               </div>
               <div>
-                <h3
-                  class="font-bold text-xl mb-2 text-gray-900 dark:text-white"
-                >
-                  Custom Website Design
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  We create websites that are unique to your business. Making
-                  sure they look great and work well for your visitors.
+                <h3 class="feature-title">Custom Website Design</h3>
+                <p class="feature-description">
+                  We create unique, professional websites tailored to your brand
+                  and business goals, ensuring a memorable online presence.
                 </p>
               </div>
             </div>
             <!-- Feature 2 -->
-            <div class="flex items-start gap-6">
-              <div
-                class="bg-white dark:bg-gray-800 shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl">🛒</span>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-store"></i>
               </div>
               <div>
-                <h3
-                  class="font-bold text-xl mb-2 text-gray-900 dark:text-white"
-                >
-                  E-commerce Solutions
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  We build online stores that are easy to use, safe for shopping
-                  and help you sell more products.
+                <h3 class="feature-title">E-commerce Solutions</h3>
+                <p class="feature-description">
+                  Build powerful online stores with secure payment gateways,
+                  inventory management, and user-friendly shopping experiences.
                 </p>
               </div>
             </div>
             <!-- Feature 3 -->
-            <div class="flex items-start gap-6">
-              <div
-                class="bg-white dark:bg-gray-800 shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl">📱</span>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-mobile-alt"></i>
               </div>
               <div>
-                <h3
-                  class="font-bold text-xl mb-2 text-gray-900 dark:text-white"
-                >
-                  Responsive Web Design
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  We design websites that look good and work properly on any
-                  device, whether it's a phone, tablet or computer.
+                <h3 class="feature-title">Responsive Design</h3>
+                <p class="feature-description">
+                  All our websites are fully responsive, ensuring perfect
+                  functionality across all devices and screen sizes.
                 </p>
               </div>
             </div>
             <!-- Feature 4 -->
-            <div class="flex items-start gap-6">
-              <div
-                class="bg-white dark:bg-gray-800 shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl">🖥️</span>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-user-voice"></i>
               </div>
               <div>
-                <h3
-                  class="font-bold text-xl mb-2 text-gray-900 dark:text-white"
-                >
-                  UI/UX Design
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  We design websites that are simple and easy to use, helping
-                  visitors find what they need quickly.
+                <h3 class="feature-title">UI/UX Design</h3>
+                <p class="feature-description">
+                  User-centered design approach that creates intuitive, engaging
+                  experiences that keep visitors coming back.
                 </p>
               </div>
             </div>
-            <!-- Feature 5 (highlighted) -->
-            <div class="flex items-start gap-6">
-              <div
-                class="bg-[var(--primary-color)] shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl text-white">📝</span>
+            <!-- Feature 5 -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-refresh"></i>
               </div>
               <div>
-                <h3 class="font-bold text-xl mb-2 text-[var(--primary-color)]">
-                  Website Redesign
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  High-quality, SEO-friendly content is essential for ranking
-                  well on search engines.
+                <h3 class="feature-title">Website Redesign</h3>
+                <p class="feature-description">
+                  Transform your existing website with modern design, improved
+                  functionality, and better user experience.
                 </p>
               </div>
             </div>
             <!-- Feature 6 -->
-            <div class="flex items-start gap-6">
-              <div
-                class="bg-white dark:bg-gray-800 shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl">📝</span>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-search-alt-2"></i>
               </div>
               <div>
-                <h3
-                  class="font-bold text-xl mb-2 text-gray-900 dark:text-white"
-                >
-                  SEO Optimization
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  We improve your website’s visibility on search engines,
-                  helping more people find your business online.
+                <h3 class="feature-title">SEO Optimization</h3>
+                <p class="feature-description">
+                  Built-in SEO best practices to improve your website's search
+                  engine rankings and drive more organic traffic.
                 </p>
               </div>
             </div>

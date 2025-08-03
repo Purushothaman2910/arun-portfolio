@@ -7,12 +7,17 @@
       name="description"
       content="Social Media Marketing Services - AK Creative Studio"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
     <title>Social Media Marketing | AK Creative Studio</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/animations.css" />
     <link rel="stylesheet" href="../css/scroll-bar.css" />
     <link rel="stylesheet" href="../css/testimonial.css" />
+    <link rel="stylesheet" href="../css/feature-cards.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = { darkMode: "class" };
@@ -56,7 +61,7 @@
           <div class="md:w-1/2 flex justify-center">
             <!-- Illustration Placeholder -->
             <img
-              src="../assets/social-media-marketting.png"
+              src="../assets/social-media-marketing.webp"
               alt="Social Media Marketing Illustration"
               class="w-full max-w-md rounded-2xl shadow-xl"
             />
@@ -67,120 +72,88 @@
       <!-- Special Features Section -->
       <section class="py-20 bg-[var(--bg-secondary)]">
         <div class="container mx-auto px-4">
-          <h2
-            class="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white"
-          >
+          <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">
             Our Special
-            <span class="text-[var(--primary-color)] italic">Features</span>
+            <span style="color: var(--primary-color); font-style: italic"
+              >Features</span
+            >
           </h2>
-          <div class="grid md:grid-cols-3 gap-10">
-            <!-- Feature 1 (highlighted) -->
-            <div class="flex items-start gap-6 md:col-span-1">
-              <div
-                class="bg-[var(--primary-color)] shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl text-white">📊</span>
+          <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-target-lock"></i>
               </div>
               <div>
-                <h3 class="font-bold text-xl mb-2 text-[var(--primary-color)]">
-                  Social Media Strategy Development
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  Tailor made strategies for each platform to meet your business
-                  goals.
+                <h3 class="feature-title">Social Media Strategy Development</h3>
+                <p class="feature-description">
+                  Tailor-made strategies for each platform to meet your business
+                  goals and maximize your social media presence.
                 </p>
               </div>
             </div>
             <!-- Feature 2 -->
-            <div class="flex items-start gap-6 md:col-span-1">
-              <div
-                class="bg-white dark:bg-gray-800 shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl">🖼️</span>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-image"></i>
               </div>
               <div>
-                <h3
-                  class="font-bold text-xl mb-2 text-gray-900 dark:text-white"
-                >
-                  Content Creation
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  High-quality posts, images and videos to engage your audience.
+                <h3 class="feature-title">Content Creation</h3>
+                <p class="feature-description">
+                  High-quality posts, images, and videos designed to engage your
+                  audience and drive meaningful interactions.
                 </p>
               </div>
             </div>
             <!-- Feature 3 -->
-            <div class="flex items-start gap-6 md:col-span-1">
-              <div
-                class="bg-white dark:bg-gray-800 shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl">📝</span>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-cog"></i>
               </div>
               <div>
-                <h3
-                  class="font-bold text-xl mb-2 text-gray-900 dark:text-white"
-                >
-                  Account Management
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
+                <h3 class="feature-title">Account Management</h3>
+                <p class="feature-description">
                   Consistent management of your social profiles with daily
-                  updates and interactions.
+                  updates, community engagement, and brand monitoring.
                 </p>
               </div>
             </div>
             <!-- Feature 4 -->
-            <div class="flex items-start gap-6 md:col-span-1">
-              <div
-                class="bg-white dark:bg-gray-800 shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl">🅰️</span>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-ad"></i>
               </div>
               <div>
-                <h3
-                  class="font-bold text-xl mb-2 text-gray-900 dark:text-white"
-                >
-                  Paid Advertising
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
+                <h3 class="feature-title">Paid Advertising</h3>
+                <p class="feature-description">
                   Targeted ads on platforms like Facebook, Instagram, LinkedIn,
-                  and Twitter.
+                  and Twitter to reach your ideal audience.
                 </p>
               </div>
             </div>
             <!-- Feature 5 -->
-            <div class="flex items-start gap-6 md:col-span-1">
-              <div
-                class="bg-white dark:bg-gray-800 shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl">🤝</span>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-user-check"></i>
               </div>
               <div>
-                <h3
-                  class="font-bold text-xl mb-2 text-gray-900 dark:text-white"
-                >
-                  Influencer Marketing
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  Collaborations with influencers to boost brand visibility.
+                <h3 class="feature-title">Influencer Marketing</h3>
+                <p class="feature-description">
+                  Strategic collaborations with influencers to boost brand
+                  visibility and reach new audiences effectively.
                 </p>
               </div>
             </div>
             <!-- Feature 6 -->
-            <div class="flex items-start gap-6 md:col-span-1">
-              <div
-                class="bg-white dark:bg-gray-800 shadow-lg rounded-full w-20 h-20 flex items-center justify-center"
-              >
-                <span class="text-3xl">📈</span>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-bar-chart-alt-2"></i>
               </div>
               <div>
-                <h3
-                  class="font-bold text-xl mb-2 text-gray-900 dark:text-white"
-                >
-                  Analytics & Reporting
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300">
-                  For businesses targeting customers in a specific geographic
-                  area, local SEO is crucial.
+                <h3 class="feature-title">Analytics & Reporting</h3>
+                <p class="feature-description">
+                  Comprehensive analytics and detailed reporting to track
+                  performance, measure ROI, and optimize your campaigns.
                 </p>
               </div>
             </div>
