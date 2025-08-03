@@ -27,7 +27,7 @@ const headerTemplate = `
       <!-- Desktop Navigation -->
       <nav class="hidden md:block">
         <ul class="flex items-center space-x-8">
-          <li><a href="/pages/index.html" class="nav-link">Home</a></li>
+          <li><a href="/index.html" class="nav-link">Home</a></li>
           <li><a href="/pages/about.html" class="nav-link">About</a></li>
           <li class="relative">
             <button id="services-dropdown-btn" class="flex items-center nav-link focus:outline-none" aria-expanded="false" aria-haspopup="true">
@@ -70,7 +70,7 @@ const headerTemplate = `
     <!-- Mobile Navigation -->
     <div id="mobile-menu" class="hidden md:hidden pb-4">
       <ul class="space-y-2">
-        <li><a href="/pages/index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="/index.html" class="mobile-nav-link">Home</a></li>
         <li><a href="/pages/about.html" class="mobile-nav-link">About</a></li>
         <li>
           <button id="mobile-services-dropdown-btn" class="w-full flex items-center justify-between mobile-nav-link text-left focus:outline-none" aria-expanded="false" aria-haspopup="true">
