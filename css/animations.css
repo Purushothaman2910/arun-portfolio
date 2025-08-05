@@ -259,7 +259,7 @@
 }
 
 .hover-glow:hover {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
 }
 
 /* ============= SCROLL-TRIGGERED ANIMATIONS ============= */
@@ -328,8 +328,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #3b82f6;
-    /* blue color */
+    background: var(--logo-gradient);
     transition: width 0.3s ease;
 }
 
@@ -582,7 +581,7 @@
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    background: var(--logo-gradient);
     color: white;
     border: none;
     border-radius: 25px;
@@ -597,7 +596,7 @@
 .learn-more-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-    background: linear-gradient(135deg, #2563eb, #1e40af);
+    background: var(--logo-gradient);
 }
 
 .learn-more-btn:active {
@@ -613,7 +612,7 @@
 }
 
 /* Dark mode support for learn more button */
-.dark .learn-more-btn {
+/* .dark .learn-more-btn {
     background: linear-gradient(135deg, #6366f1, #4f46e5);
     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
@@ -621,7 +620,7 @@
 .dark .learn-more-btn:hover {
     background: linear-gradient(135deg, #5855eb, #4338ca);
     box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
-}
+} */
 
 /* ============= SERVICE CARD ENHANCEMENTS ============= */
 /* Improved styling for service cards */

@@ -36,9 +36,10 @@
       }
 
       .nav-btn:hover {
-          background: rgba(255, 255, 255, 1);
+          background: var(--logo-gradient);
+          color: white;
           transform: translateY(-50%) scale(1.1);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
       }
 
       .nav-btn:active {
@@ -70,7 +71,7 @@
       }
 
       .indicator.active {
-          background: #667eea;
+          background: var(--logo-gradient);
           transform: scale(1.2);
       }
 
@@ -188,7 +189,7 @@
       }
 
       .client-indicator.active {
-          background: #667eea;
+          background: var(--logo-gradient);
           transform: scale(1.2);
       }
 

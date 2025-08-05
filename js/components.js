@@ -18,10 +18,11 @@ const headerTemplate = `
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo/Brand -->
-      <div class="flex-shrink-0">
-        <a href="../index.html" class="text-xl font-bold text-gray-900 dark:text-white">
-          AK Creative Studio
-        </a>
+      <div class="">
+          <a href="../index.html" class="flex items-center text-xl font-bold text-gray-900 dark:text-white">
+            <img src="../assets/logo2.jpg" alt="AK Creative Studio Logo" class="w-10 h-10 mr-2" />
+            AK Creative Studio
+          </a>
       </div>
 
       <!-- Desktop Navigation -->

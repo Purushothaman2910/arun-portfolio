@@ -11,8 +11,9 @@
 }
 
 .feature-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 143, 163, 0.05) 50%, rgba(139, 92, 246, 0.05) 100%);
 }
 
 .feature-icon {
@@ -28,8 +29,8 @@
 }
 
 .feature-card:hover .feature-icon {
-    background: var(--primary-color);
-    transform: scale(1.05);
+    background: var(--logo-gradient);
+    transform: scale(1.1);
 }
 
 .feature-icon i {
@@ -51,7 +52,10 @@
 }
 
 .feature-card:hover .feature-title {
-    color: var(--primary-color);
+    background: var(--logo-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .feature-description {

@@ -6,7 +6,7 @@
     <meta name="description" content="Business Portfolio Website" />
     <title>Business Portfolio</title>
 
-    <link rel="shortcut icon" href="../assets/logo.jpg" type="image/jpg" />
+    <link rel="shortcut icon" href="assets/logo2.jpg" type="image/jpg" />
 
     <!-- Boxicons CDN -->
     <link
@@ -46,9 +46,10 @@
               with AK Creative Studio
             </h1>
             <h2
-              class="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900 dark:text-white mb-6"
+              class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--text-primary)] dark:text-white mb-6"
             >
-              Let us <span id="typed-text" class="text-indigo-600"></span>
+              Let us
+              <span id="typed-text" class="text-[var(--primary-color)]"></span>
             </h2>
             <p
               class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-xl"
@@ -64,12 +65,12 @@
             <div class="flex flex-col sm:flex-row gap-4">
               <a
                 href="#services"
-                class="px-8 py-3 rounded-full bg-blue-900 text-white font-semibold shadow-lg hover:bg-blue-800 transition"
+                class="px-8 py-3 rounded-full bg-[var(--primary-color)] text-white font-semibold shadow-lg hover:bg-[var(--primary-dark)] transition"
                 >Our Service</a
               >
               <a
                 href="#contact"
-                class="px-8 py-3 rounded-full bg-white text-blue-900 font-semibold border border-blue-900 shadow hover:bg-blue-50 transition"
+                class="px-8 py-3 rounded-full bg-white text-[var(--primary-color)] font-semibold border border-[var(--primary-color)] shadow hover:bg-[var(--bg-secondary)] transition"
                 >Contact us</a
               >
             </div>
@@ -84,7 +85,7 @@
             >
               <!-- Yellow Circle -->
               <div
-                class="absolute -z-10 rounded-full bg-yellow-300"
+                class="absolute -z-10 rounded-full bg-[var(--secondary-color)]"
                 style="
                   width: 260px;
                   height: 260px;
@@ -96,13 +97,13 @@
               <!-- Geometric Shapes (SVG or divs) -->
               <div class="absolute top-6 left-6 flex gap-2">
                 <div
-                  class="w-4 h-4 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded"
+                  class="w-4 h-4 bg-gradient-to-br from-[var(--bg-secondary)] to-[var(--bg-tertiary)] dark:from-[var(--bg-secondary)] dark:to-[var(--bg-tertiary)] rounded"
                 ></div>
                 <div
-                  class="w-3 h-3 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded"
+                  class="w-3 h-3 bg-gradient-to-br from-[var(--bg-secondary)] to-[var(--bg-tertiary)] dark:from-[var(--bg-secondary)] dark:to-[var(--bg-tertiary)] rounded"
                 ></div>
                 <div
-                  class="w-5 h-5 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded"
+                  class="w-5 h-5 bg-gradient-to-br from-[var(--bg-secondary)] to-[var(--bg-tertiary)] dark:from-[var(--bg-secondary)] dark:to-[var(--bg-tertiary)] rounded"
                 ></div>
               </div>
               <!-- Dots (SVG or divs) -->
@@ -246,10 +247,10 @@
                   class="service-card service-stagger-item slide-up scroll-animate h-full"
                 >
                   <div
-                    class="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon p-2"
+                    class="bg-[var(--bg-secondary)] dark:bg-[var(--bg-tertiary)] w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon p-2"
                   >
                     <!-- <i
-                      class="bx bx-code-alt text-blue-600 dark:text-blue-400 text-2xl"
+                                              class="bx bx-code-alt text-[var(--primary-color)] dark:text-[var(--primary-color)] text-2xl"
                     ></i> -->
 
                     <img
@@ -329,10 +330,10 @@
                   class="service-card service-stagger-item slide-up scroll-animate h-full"
                 >
                   <div
-                    class="bg-yellow-100 dark:bg-yellow-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon p-2"
+                    class="bg-[var(--bg-secondary)] dark:bg-[var(--bg-tertiary)] w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon p-2"
                   >
                     <!-- <i
-                      class="bx bx-target-lock text-yellow-600 dark:text-yellow-400 text-2xl"
+                                              class="bx bx-target-lock text-[var(--primary-color)] dark:text-[var(--primary-color)] text-2xl"
                     ></i> -->
 
                     <img src="../assets/google-ads.png" alt="g-adds-image" />
@@ -353,10 +354,10 @@
                   class="service-card service-stagger-item slide-up scroll-animate h-full"
                 >
                   <div
-                    class="bg-indigo-100 dark:bg-indigo-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon p-2"
+                    class="bg-[var(--bg-secondary)] dark:bg-[var(--bg-tertiary)] w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon p-2"
                   >
                     <!-- <i
-                      class="bx bx-search-alt text-indigo-600 dark:text-indigo-400 text-2xl"
+                                              class="bx bx-search-alt text-[var(--primary-color)] dark:text-[var(--primary-color)] text-2xl"
                     ></i> -->
                     <img src="../assets/seo.png" alt="seo-image" />
                   </div>
@@ -381,9 +382,7 @@
                   <div
                     class="bg-purple-100 dark:bg-purple-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
-                    <i
-                      class="bx bx-palette text-purple-600 dark:text-purple-400 text-2xl"
-                    ></i>
+                    <i class="bx bx-palette text-black text-2xl"></i>
                   </div>
                   <h3 class="text-xl font-semibold mb-3">Graphic Designing</h3>
                   <p class="text-gray-600 dark:text-gray-300 mb-4">
@@ -403,9 +402,7 @@
                   <div
                     class="bg-teal-100 dark:bg-teal-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
-                    <i
-                      class="bx bx-mobile-alt text-teal-600 dark:text-teal-400 text-2xl"
-                    ></i>
+                    <i class="bx bx-mobile-alt text-black text-2xl"></i>
                   </div>
                   <h3 class="text-xl font-semibold mb-3">UI / UX</h3>
                   <p class="text-gray-600 dark:text-gray-300 mb-4">
@@ -426,9 +423,7 @@
                   <div
                     class="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
-                    <i
-                      class="bx bx-video text-orange-600 dark:text-orange-400 text-2xl"
-                    ></i>
+                    <i class="bx bx-video text-black text-2xl"></i>
                   </div>
                   <h3 class="text-xl font-semibold mb-3">Video Marketing</h3>
                   <p class="text-gray-600 dark:text-gray-300 mb-4">
@@ -448,9 +443,7 @@
                   <div
                     class="bg-emerald-100 dark:bg-emerald-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-4 service-icon"
                   >
-                    <i
-                      class="bx bx-edit text-emerald-600 dark:text-emerald-400 text-2xl"
-                    ></i>
+                    <i class="bx bx-edit text-black text-2xl"></i>
                   </div>
                   <h3 class="text-xl font-semibold mb-3">Content Writing</h3>
                   <p class="text-gray-600 dark:text-gray-300 mb-4">
@@ -628,17 +621,17 @@
                       <!-- Post Image -->
                       <div class="relative">
                         <div
-                          class="w-full h-64 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-200 dark:to-gray-300 flex items-center justify-center"
+                          class="w-full h-64 bg-gradient-to-br from-[var(--bg-secondary)] to-[var(--bg-tertiary)] dark:from-[var(--bg-secondary)] dark:to-[var(--bg-tertiary)] flex items-center justify-center"
                         >
                           <!-- Team Meeting Illustration -->
                           <div
                             class="flex items-center justify-center space-x-2"
                           >
                             <div
-                              class="w-12 h-12 bg-blue-200 dark:bg-blue-300 rounded-full flex items-center justify-center"
+                              class="w-12 h-12 bg-[var(--bg-secondary)] dark:bg-[var(--bg-tertiary)] rounded-full flex items-center justify-center"
                             >
                               <i
-                                class="bx bx-user text-blue-600 dark:text-blue-700 text-lg"
+                                class="bx bx-user text-[var(--primary-color)] dark:text-[var(--primary-color)] text-lg"
                               ></i>
                             </div>
                             <div
@@ -680,7 +673,7 @@
                             class="bx bx-heart text-xl text-gray-600 hover:text-red-500 cursor-pointer transition-colors"
                           ></i>
                           <i
-                            class="bx bx-message-rounded text-xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors"
+                            class="bx bx-message-rounded text-xl text-[var(--text-secondary)] hover:text-[var(--primary-color)] cursor-pointer transition-colors"
                           ></i>
                           <i
                             class="bx bx-send text-xl text-gray-600 hover:text-green-500 cursor-pointer transition-colors"
@@ -695,7 +688,7 @@
 
                   <!-- Decorative Elements -->
                   <div
-                    class="absolute -top-4 -left-4 w-8 h-8 bg-blue-200 dark:bg-blue-300 rounded-full opacity-60"
+                    class="absolute -top-4 -left-4 w-8 h-8 bg-[var(--bg-secondary)] dark:bg-[var(--bg-tertiary)] rounded-full opacity-60"
                   ></div>
                   <div
                     class="absolute -bottom-4 -right-4 w-6 h-6 bg-green-200 dark:bg-green-300 rounded-full opacity-60"
