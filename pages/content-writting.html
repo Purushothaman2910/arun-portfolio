@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="../css/animations.css" />
     <link rel="stylesheet" href="../css/scroll-bar.css" />
     <link rel="stylesheet" href="../css/testimonial.css" />
+    <link rel="stylesheet" href="../css/feature-cards.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = { darkMode: "class" };
@@ -53,223 +58,108 @@
               >
             </div>
           </div>
-          <div class="md:w-1/2 flex justify-center">
+          <div class="md:w-1Update/2 flex justify-center">
             <!-- Illustration Placeholder -->
             <div class="relative w-full max-w-md">
-              <div class="bg-[var(--primary-color)] rounded-2xl p-8 shadow-xl">
-                <div class="bg-blue-100 rounded-lg p-4 mb-4">
-                  <div
-                    class="flex items-center bg-white rounded px-3 py-2 mb-3"
-                  >
-                    <span class="text-gray-400 mr-2">✍️</span>
-                    <span class="text-gray-500 text-sm">Writing...</span>
-                  </div>
-                  <div class="grid grid-cols-2 gap-2">
-                    <div class="bg-white rounded p-2 flex items-end space-x-1">
-                      <div
-                        class="bg-[var(--primary-color)] rounded-sm"
-                        style="height: 60%; width: 20%"
-                      ></div>
-                      <div
-                        class="bg-[var(--primary-color)] rounded-sm"
-                        style="height: 80%; width: 20%"
-                      ></div>
-                      <div
-                        class="bg-[var(--primary-color)] rounded-sm"
-                        style="height: 40%; width: 20%"
-                      ></div>
-                      <div
-                        class="bg-[var(--primary-color)] rounded-sm"
-                        style="height: 90%; width: 20%"
-                      ></div>
-                    </div>
-                    <div class="bg-white rounded p-2 flex items-end space-x-1">
-                      <div
-                        class="bg-[var(--primary-color)] rounded-sm"
-                        style="height: 70%; width: 20%"
-                      ></div>
-                      <div
-                        class="bg-[var(--primary-color)] rounded-sm"
-                        style="height: 50%; width: 20%"
-                      ></div>
-                      <div
-                        class="bg-[var(--primary-color)] rounded-sm"
-                        style="height: 85%; width: 20%"
-                      ></div>
-                      <div
-                        class="bg-[var(--primary-color)] rounded-sm"
-                        style="height: 30%; width: 20%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Floating Icons -->
-              <div
-                class="absolute top-4 left-4 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
-              >
-                ✍️
-              </div>
-              <div
-                class="absolute top-8 right-8 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
-              >
-                📝
-              </div>
-              <div
-                class="absolute bottom-8 left-8 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
-              >
-                🔍
-              </div>
-              <div
-                class="absolute bottom-4 right-4 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
-              >
-                📊
-              </div>
-              <div
-                class="absolute top-1/2 left-2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
-              >
-                💡
-              </div>
-              <div
-                class="absolute top-1/2 right-2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
-              >
-                🎯
-              </div>
+              <img src="/assets/content-writting.webp" alt="" />
             </div>
           </div>
         </div>
       </section>
 
       <!-- Special Features Section -->
+      <!-- Special Features Section -->
       <section class="py-20 bg-[var(--bg-secondary)]">
         <div class="container mx-auto px-4">
-          <h2
-            class="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white"
-          >
+          <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">
             Our Special
-            <span class="text-[var(--primary-color)] italic">Features</span>
+            <span style="color: var(--primary-color); font-style: italic"
+              >Features</span
+            >
           </h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <!-- Blog Writing -->
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
-              <div class="text-center mb-6">
-                <div
-                  class="w-16 h-16 bg-[var(--primary-color)] rounded-lg mx-auto mb-4 flex items-center justify-center text-white font-bold text-2xl"
-                >
-                  📝
-                </div>
-                <h3
-                  class="text-2xl font-bold text-gray-900 dark:text-white mb-4"
-                >
-                  Blog Writing
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                  Create engaging, informative, and well-researched blog posts
-                  to build your authority and drive traffic to your website.
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-edit"></i>
+              </div>
+              <div>
+                <h3 class="feature-title">Blog Writing</h3>
+                <p class="feature-description">
+                  Our team of expert writers crafts high-quality, engaging blog
+                  posts that capture your brand's voice and tone.
                 </p>
               </div>
             </div>
-            <!-- Website Copywriting -->
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
-              <div class="text-center mb-6">
-                <div
-                  class="w-16 h-16 bg-[var(--primary-color)] rounded-lg mx-auto mb-4 flex items-center justify-center text-white font-bold text-2xl"
-                >
-                  🌐
-                </div>
-                <h3
-                  class="text-2xl font-bold text-gray-900 dark:text-white mb-4"
-                >
-                  Website Copywriting
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                  Craft compelling and conversion-optimized website copy that
-                  clearly communicates your brand message and value proposition.
+            <!-- Article Writing -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-news"></i>
+              </div>
+              <div>
+                <h3 class="feature-title">Article Writing</h3>
+                <p class="feature-description">
+                  Our writers create informative, well-researched articles that
+                  showcase your brand's expertise and thought leadership.
                 </p>
               </div>
             </div>
-            <!-- SEO Content -->
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
-              <div class="text-center mb-6">
-                <div
-                  class="w-16 h-16 bg-[var(--primary-color)] rounded-lg mx-auto mb-4 flex items-center justify-center text-white font-bold text-2xl"
-                >
-                  🔍
-                </div>
-                <h3
-                  class="text-2xl font-bold text-gray-900 dark:text-white mb-4"
-                >
-                  SEO Content
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                  Optimize your content with targeted keywords and SEO best
-                  practices to improve search engine rankings and attract
-                  organic traffic.
+            <!-- Copywriting -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-pen"></i>
+              </div>
+              <div>
+                <h3 class="feature-title">Copywriting</h3>
+                <p class="feature-description">
+                  Our copywriters craft compelling, persuasive copy that drives
+                  conversions and grows your business.
                 </p>
               </div>
             </div>
-            <!-- Product Descriptions -->
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
-              <div class="text-center mb-6">
-                <div
-                  class="w-16 h-16 bg-[var(--primary-color)] rounded-lg mx-auto mb-4 flex items-center justify-center text-white font-bold text-2xl"
-                >
-                  🛒
-                </div>
-                <h3
-                  class="text-2xl font-bold text-gray-900 dark:text-white mb-4"
-                >
-                  Product Descriptions
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                  Write persuasive and clear product descriptions that highlight
-                  the key features and benefits, driving sales and conversions.
+            <!-- Website Content -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-globe"></i>
+              </div>
+              <div>
+                <h3 class="feature-title">Website Content</h3>
+                <p class="feature-description">
+                  We create compelling website content that engages visitors and
+                  converts them into customers.
                 </p>
               </div>
             </div>
             <!-- Social Media Content -->
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
-              <div class="text-center mb-6">
-                <div
-                  class="w-16 h-16 bg-[var(--primary-color)] rounded-lg mx-auto mb-4 flex items-center justify-center text-white font-bold text-2xl"
-                >
-                  📱
-                </div>
-                <h3
-                  class="text-2xl font-bold text-gray-900 dark:text-white mb-4"
-                >
-                  Social Media Content
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                  Develop engaging and shareable social media posts that
-                  resonate with your audience, boosting brand awareness and
-                  engagement.
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-share-alt"></i>
+              </div>
+              <div>
+                <h3 class="feature-title">Social Media Content</h3>
+                <p class="feature-description">
+                  Engaging social media posts and campaigns that build your brand
+                  presence and connect with your audience.
                 </p>
               </div>
             </div>
-            <!-- Email Copywriting -->
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
-              <div class="text-center mb-6">
-                <div
-                  class="w-16 h-16 bg-[var(--primary-color)] rounded-lg mx-auto mb-4 flex items-center justify-center text-white font-bold text-2xl"
-                >
-                  📧
-                </div>
-                <h3
-                  class="text-2xl font-bold text-gray-900 dark:text-white mb-4"
-                >
-                  Email Copywriting
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                  Create impactful email campaigns that connect with your
-                  audience and encourage them to take action, from signups to
-                  purchases.
+            <!-- Email Marketing -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bx bx-envelope"></i>
+              </div>
+              <div>
+                <h3 class="feature-title">Email Marketing</h3>
+                <p class="feature-description">
+                  Persuasive email campaigns that nurture leads and drive
+                  conversions for your business.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
+      ``
 
       <!-- Why Choose Us Section -->
       <section class="py-20 bg-[var(--primary-color)]/20">
