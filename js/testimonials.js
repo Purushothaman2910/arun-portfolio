@@ -265,7 +265,7 @@ class ContinuousCarousel {
 
 // Initialize the carousel
 const carousel = new ContinuousCarousel(".carousel-container", {
-    cardData: createCardContent(["../assets/about-image.jpeg", "../assets/about-image.jpeg", "../assets/about-image.jpeg"]),
+    cardData: createCardContent(["../assets/about-image.jpeg", "../assets/editing-image.jpeg", "../assets/content-writting.webp"]),
     autoplayDelay: 3000,
 });
 

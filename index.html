@@ -408,7 +408,7 @@
                   >
                     <i class="bx bx-mobile-alt text-black text-2xl"></i>
                   </div>
-                  <h3 class="text-xl font-semibold mb-3">UI / UX</h3>
+                  <h3 class="text-xl font-semibold mb-3">UIimage  / UX</h3>
                   <p class="text-gray-600 dark:text-gray-300 mb-4">
                     User-centered design solutions that create intuitive,
                     engaging, and accessible user experiences across all
@@ -996,6 +996,16 @@
         </div>
       </section>
     </main>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+      <div class="relative max-w-4xl max-h-full">
+        <button id="close-modal" class="absolute top-4 right-4 text-white hover:text-gray-300 text-3xl font-bold z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-200">
+          &times;
+        </button>
+        <img id="modal-image" src="" alt="Testimonial Image" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
+      </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="/js/navigation.js"></script>
