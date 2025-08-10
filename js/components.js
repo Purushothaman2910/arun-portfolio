@@ -123,8 +123,23 @@ const footerTemplate = `
         <ul class="space-y-2">
           <li><a href="/pages/index.html" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
           <li><a href="/pages/about.html" class="text-gray-300 hover:text-white transition-colors duration-200">About</a></li>
-          <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">Services</a></li>
+          <li><a href="../index.html#services" class="text-gray-300 hover:text-white transition-colors duration-200">Services</a></li>
           <li><a href="/pages/contact.html" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Our Services</h4>
+        <ul class="space-y-2">
+          <li><a href="/pages/web-dev.html" class="text-gray-300 hover:text-white transition-colors duration-200">Web Development</a></li>
+          <li><a href="/pages/web-des.html" class="text-gray-300 hover:text-white transition-colors duration-200">Web Design</a></li>
+          <li><a href="/pages/ui-ux-design.html" class="text-gray-300 hover:text-white transition-colors duration-200">UI/UX Design</a></li>
+          <li><a href="/pages/graphic-design.html" class="text-gray-300 hover:text-white transition-colors duration-200">Graphic Design</a></li>
+          <li><a href="/pages/digital-marketing.html" class="text-gray-300 hover:text-white transition-colors duration-200">Digital Marketing</a></li>
+          <li><a href="/pages/social-media.html" class="text-gray-300 hover:text-white transition-colors duration-200">Social Media</a></li>
+          <li><a href="/pages/seo.html" class="text-gray-300 hover:text-white transition-colors duration-200">SEO</a></li>
+          <li><a href="/pages/content-writting.html" class="text-gray-300 hover:text-white transition-colors duration-200">Content Writing</a></li>
+          <li><a href="/pages/video-marketing.html" class="text-gray-300 hover:text-white transition-colors duration-200">Video Marketing</a></li>
+          <li><a href="/pages/ads.html" class="text-gray-300 hover:text-white transition-colors duration-200">Google and Meta Ads</a></li>
         </ul>
       </div>
       <div>
