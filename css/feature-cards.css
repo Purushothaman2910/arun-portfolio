@@ -13,7 +13,7 @@
 .feature-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 143, 163, 0.05) 50%, rgba(139, 92, 246, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.05) 0%, rgba(156, 39, 176, 0.05) 50%, rgba(103, 58, 183, 0.05) 100%);
 }
 
 .feature-icon {

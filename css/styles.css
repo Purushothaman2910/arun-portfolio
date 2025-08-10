@@ -18,23 +18,23 @@ body {
 
 /* Custom Properties */
 :root {
-    /* Logo-inspired color palette */
-    --primary-color: #ff6b35;
-    /* Orange from logo */
-    --primary-dark: #e55a2b;
-    /* Darker orange */
-    --secondary-color: #ff8fa3;
+    /* NEW LOGO-INSPIRED COLORS */
+    --primary-color: #e91e63;
     /* Pink from logo */
-    --accent-color: #8b5cf6;
+    --primary-dark: #c2185b;
+    /* Darker pink */
+    --secondary-color: #9c27b0;
     /* Purple from logo */
-    --accent-dark: #7c3aed;
-    /* Darker purple */
-    --gradient-start: #ff6b35;
-    /* Orange start */
-    --gradient-middle: #ff8fa3;
-    /* Pink middle */
-    --gradient-end: #8b5cf6;
-    /* Purple end */
+    --accent-color: #673ab7;
+    /* Deep purple accent */
+    --accent-dark: #512da8;
+    /* Darker deep purple */
+    --gradient-start: #e91e63;
+    /* Pink start */
+    --gradient-middle: #9c27b0;
+    /* Purple middle */
+    --gradient-end: #673ab7;
+    /* Deep purple end */
 
     /* Text colors */
     --text-primary: #1a1a1a;
@@ -194,7 +194,7 @@ body {
 
 .mobile-nav-link:hover {
     color: var(--primary-color);
-    background: linear-gradient(90deg, var(--bg-secondary) 0%, rgba(255, 107, 53, 0.1) 100%);
+    background: linear-gradient(90deg, var(--bg-secondary) 0%, rgba(233, 30, 99, 0.1) 100%);
     padding-left: 0.5rem;
     transform: translateX(4px);
 }
@@ -235,7 +235,7 @@ body {
 .form-input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.15);
     transform: translateY(-1px);
 }
 
@@ -330,7 +330,7 @@ section::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.03) 0%, rgba(255, 143, 163, 0.03) 50%, rgba(139, 92, 246, 0.03) 100%);
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.03) 0%, rgba(156, 39, 176, 0.03) 50%, rgba(103, 58, 183, 0.03) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -407,7 +407,7 @@ section:hover::before {
 }
 
 .benefit-item:hover {
-    background: linear-gradient(90deg, var(--bg-secondary) 0%, rgba(255, 107, 53, 0.08) 100%);
+    background: linear-gradient(90deg, var(--bg-secondary) 0%, rgba(233, 30, 99, 0.08) 100%);
     transform: translateX(8px);
     border-left: 3px solid var(--primary-color);
 }

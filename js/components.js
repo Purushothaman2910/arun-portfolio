@@ -38,11 +38,13 @@ const headerTemplate = `
               </svg>
             </button>
             <div id="services-dropdown" class="absolute left-0 mt-2 w-52 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-50 hidden transition-all duration-200 origin-top">
-              <a href="/pages/seo.html" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">SEO</a>
+              <a href="/pages/seo.html" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Search Engine Optimization</a>
               <a href="/pages/web-des.html" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Web Design</a>
               <a href="/pages/social-media.html" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Social Media Marketing</a>
               <a href="/pages/ads.html" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Google and Meta Ads</a>
               <a href="/pages/content-writting.html" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Content Writting</a>
+              <a href="/pages/digital-marketing.html" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Digital Marketing</a>
+              <a href="/pages/web-dev.html" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Web Development</a>
             </div>
           </li>
           <li><a href="/pages/contact.html" class="nav-link">Contact</a></li>
@@ -70,7 +72,7 @@ const headerTemplate = `
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="hidden md:hidden pb-4">
+    <div id="mobile-menu" class="hidden md:hidden pb-4 max-h-96 overflow-y-auto">
       <ul class="space-y-2">
         <li><a href="/index.html" class="mobile-nav-link">Home</a></li>
         <li><a href="/pages/about.html" class="mobile-nav-link">About</a></li>
@@ -82,11 +84,13 @@ const headerTemplate = `
             </svg>
           </button>
           <div id="mobile-services-dropdown" class="hidden pl-4 mt-1 space-y-1">
-            <a href="/pages/seo.html" class="block py-2 px-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors duration-200">SEO</a>
+            <a href="/pages/seo.html" class="block py-2 px-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors duration-200">Search Engine Optimization</a>
             <a href="/pages/web-des.html" class="block py-2 px-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors duration-200">Web Design</a>
             <a href="/pages/social-media.html" class="block py-2 px-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors duration-200">Social Media Marketing</a>
             <a href="/pages/ads.html" class="block py-2 px-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors duration-200">Google and Meta Ads</a>
             <a href="/pages/content-writting.html" class="block py-2 px-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors duration-200">Content Writting</a>
+            <a href="/pages/digital-marketing.html" class="block py-2 px-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors duration-200">Digital Marketing</a>
+            <a href="/pages/web-dev.html" class="block py-2 px-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors duration-200">Web Development</a>
           </div>
         </li>
         <li><a href="/pages/contact.html" class="mobile-nav-link">Contact</a></li>
