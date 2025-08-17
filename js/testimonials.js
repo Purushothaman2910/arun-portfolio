@@ -612,8 +612,10 @@ class ClientsCarousel {
 }
 
 // Initialize the clients carousel
+// Initialize the clients carousel
 const clientsCarousel = new ClientsCarousel(".clients-carousel-container", {
     clientData: createClientCards([
+        '../assets/asm-client.png',
         '../assets/Client _n(1).jpg',
         '../assets/Client _n(2).jpg',
         "../assets/Client _n(3).jpg",
