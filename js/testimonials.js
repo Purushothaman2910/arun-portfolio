@@ -613,7 +613,23 @@ class ClientsCarousel {
 
 // Initialize the clients carousel
 const clientsCarousel = new ClientsCarousel(".clients-carousel-container", {
-    clientData: createClientCards(['../assets/editing-image.jpeg', '../assets/about-image.jpeg', '../assets/about-image.jpeg', "../assets/editing-image.jpeg", "../assets/editing-image.jpeg", "../assets/about-image.jpeg"]),
+    clientData: createClientCards([
+        '../assets/Client _n(1).jpg',
+        '../assets/Client _n(2).jpg',
+        "../assets/Client _n(3).jpg",
+        "../assets/Client _n(4).jpg",
+        "../assets/Client _n.jpg",
+        "../assets/Client(1).jpg",
+        "../assets/Client(2).jpg",
+        "../assets/Client(3).jpg",
+        '../assets/Client(4).jpg',
+        "../assets/Client(5).jpg",
+        "../assets/Client(6).jpg",
+        "../assets/client.jpeg",
+        "../assets/Client.jpg",
+        "../assets/Client.png",
+    ])
+    ,
     autoplayDelay: 4000,
 });
 

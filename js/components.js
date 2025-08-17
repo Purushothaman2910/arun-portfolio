@@ -145,8 +145,8 @@ const footerTemplate = `
       <div>
         <h4 class="text-lg font-semibold mb-4">Contact</h4>
         <ul class="space-y-2 text-gray-300">
-          <li>contact@example.com</li>
-          <li>+1 (555) 123-4567</li>
+          <li>@akcreativestudio.in</li>
+          <li>+91 7418655993</li>
           <li>123 Business St, City, State</li>
         </ul>
       </div>
