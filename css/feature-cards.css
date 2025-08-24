@@ -43,9 +43,16 @@
 }
 
 .feature-icon i {
-    font-size: 1.875rem;
+    font-size: 2rem;
     color: var(--text-secondary);
     transition: color 0.3s ease;
+}
+
+.feature-icon svg {
+    /* font-size: 3rem; */
+    height: 2rem;
+    width: 2rem;
+    /* height: ; */
 }
 
 .feature-card:hover .feature-icon i {
