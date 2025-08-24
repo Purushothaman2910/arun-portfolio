@@ -16,6 +16,13 @@
     background: linear-gradient(135deg, rgba(233, 30, 99, 0.05) 0%, rgba(156, 39, 176, 0.05) 50%, rgba(103, 58, 183, 0.05) 100%);
 }
 
+.feature-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .feature-icon {
     background: var(--bg-primary);
     width: 5rem;
@@ -26,6 +33,8 @@
     justify-content: center;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+
+
 }
 
 .feature-card:hover .feature-icon {
