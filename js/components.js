@@ -170,12 +170,21 @@ const fabTemplate = `
   <div class="contact-icons" id="contactIcons">
     <!-- Phone -->
     <a href="tel:+917418655993" class="contact-btn phone-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+    <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" height="24" viewBox="0 0 24 24" 
+    fill="none" stroke="currentColor" 
+    stroke-width="2" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    class="lucide lucide-phone-icon lucide-phone">
+    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+    </svg>
       <span class="tooltip">Call Us</span>
     </a>
 
     <!-- WhatsApp -->
-    <a href="https://wa.me/7418655993" target="_blank" class="contact-btn whatsapp-btn">
+    <a href="https://wa.me/917418655993" target="_blank" class="contact-btn whatsapp-btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -192,8 +201,19 @@ const fabTemplate = `
     </a>
 
     <!-- Message -->
-    <a href="sms:+917418655993" class="contact-btn message-btn">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-text-icon lucide-message-square-text"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg>
+    <a href="mailto:contact@akcreativestudio.in" class="contact-btn message-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+      width="24" height="24" viewBox="0 0 24 24" 
+      fill="none" stroke="currentColor" 
+      stroke-width="2" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      class="lucide lucide-message-square-text-icon lucide-message-square-text">
+      <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/>
+      <path d="M7 11h10"/>
+      <path d="M7 15h6"/>
+      <path d="M7 7h8"/>
+      </svg>
       <span class="tooltip">Email Us</span>
     </a>
   </div>
@@ -329,15 +349,11 @@ function initTheme() {
 function initFAB() {
   const fabToggle = document.getElementById('fabToggle');
   const contactIcons = document.getElementById('contactIcons');
-  let isOpen = true; // Start with menu open by default
+  let isOpen = false;
 
   console.log('Initializing FAB...');
 
   if (fabToggle && contactIcons) {
-    // Set initial state to open
-    contactIcons.classList.add('show');
-    fabToggle.classList.add('active');
-
     // Toggle FAB on click
     fabToggle.addEventListener('click', function () {
       isOpen = !isOpen;
