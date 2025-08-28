@@ -201,7 +201,7 @@ const fabTemplate = `
     </a>
 
     <!-- Message -->
-    <a href="tel:+917418655993" class="contact-btn message-btn">
+    <a href="mailto:contact@akcreativestudio.in" class="contact-btn message-btn">
       <svg xmlns="http://www.w3.org/2000/svg" 
       width="24" height="24" viewBox="0 0 24 24" 
       fill="none" stroke="currentColor" 
