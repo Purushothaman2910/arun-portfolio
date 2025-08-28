@@ -1,5 +1,5 @@
 function sendMail() {
-    const email = "example@email.com";
+    const email = "velusamypurushothaman@gmail.com";
     const subject = "Hello from Website";
     const body = "Hi, I am interested in your services.";
 

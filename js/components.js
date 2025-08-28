@@ -1,4 +1,4 @@
-// components.js - Complete updated version with click-based dropdown and mobile dropdown
+// components.js - Complete updated version with click-based dropdown, mobile dropdown, and FAB
 document.addEventListener('DOMContentLoaded', function () {
   // Insert header using template literal
   document.body.insertAdjacentHTML('afterbegin', headerTemplate);
@@ -6,9 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // Insert footer using template literal
   document.body.insertAdjacentHTML('beforeend', footerTemplate);
 
+  // Insert FAB using template literal
+  document.body.insertAdjacentHTML('beforeend', fabTemplate);
+
   // Initialize components
   initNavigation();
   initTheme();
+  initFAB();
   highlightCurrentPage();
 });
 
@@ -158,6 +162,49 @@ const footerTemplate = `
 </footer>
 `;
 
+// FAB template
+const fabTemplate = `
+<!-- Floating Action Button Container -->
+<div class="fab-container">
+  <!-- Contact Icons -->
+  <div class="contact-icons" id="contactIcons">
+    <!-- Phone -->
+    <a href="tel:+917418655993" class="contact-btn phone-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+      <span class="tooltip">Call Us</span>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/7418655993" target="_blank" class="contact-btn whatsapp-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          fill="#e6dbdb"
+          viewBox="0 0 256 256"
+          class="fill-current text-[var(--text-primary)] h-8 w-8"
+        >
+          <path
+            d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"
+          ></path>
+        </svg>
+      <span class="tooltip">WhatsApp</span>
+    </a>
+
+    <!-- Message -->
+    <a href="sms:+917418655993" class="contact-btn message-btn">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-text-icon lucide-message-square-text"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg>
+      <span class="tooltip">Email Us</span>
+    </a>
+  </div>
+
+  <!-- Main Toggle Button -->
+  <button class="fab-toggle" id="fabToggle">
+    <div class="toggle-icon"></div>
+  </button>
+</div>
+`;
+
 // Initialize navigation with click-based dropdown
 function initNavigation() {
   // Clear any existing navigation manager
@@ -275,6 +322,52 @@ function initTheme() {
     console.log('Theme manager initialized successfully');
   } else {
     console.error('Failed to find theme toggle button');
+  }
+}
+
+// Initialize FAB functionality
+function initFAB() {
+  const fabToggle = document.getElementById('fabToggle');
+  const contactIcons = document.getElementById('contactIcons');
+  let isOpen = true; // Start with menu open by default
+
+  console.log('Initializing FAB...');
+
+  if (fabToggle && contactIcons) {
+    // Set initial state to open
+    contactIcons.classList.add('show');
+    fabToggle.classList.add('active');
+
+    // Toggle FAB on click
+    fabToggle.addEventListener('click', function () {
+      isOpen = !isOpen;
+
+      if (isOpen) {
+        contactIcons.classList.add('show');
+        fabToggle.classList.add('active');
+      } else {
+        contactIcons.classList.remove('show');
+        fabToggle.classList.remove('active');
+      }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.fab-container') && isOpen) {
+        isOpen = false;
+        contactIcons.classList.remove('show');
+        fabToggle.classList.remove('active');
+      }
+    });
+
+    // Prevent closing when clicking on contact icons
+    contactIcons.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+
+    console.log('FAB initialized successfully');
+  } else {
+    console.error('Failed to find FAB elements');
   }
 }
 

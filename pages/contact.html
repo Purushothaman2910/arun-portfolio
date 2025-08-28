@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/scroll-bar.css" />
     <link rel="stylesheet" href="../css/testimonial.css" />
+    <link rel="stylesheet" href="../css/fab.css" />
   </head>
   <body
     class="bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300 custom-scroll"
@@ -133,7 +134,11 @@
                       placeholder="Your message"
                     ></textarea>
                   </div>
-                  <button type="submit" class="btn-primary w-full">
+                  <button
+                    type="submit"
+                    class="btn-primary w-full"
+                    onclick="sendMail()"
+                  >
                     Send Message
                   </button>
                 </form>
@@ -147,6 +152,7 @@
     <script src="../js/navigation.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/components.js"></script>
+    <script src="../js/mailer.js"></script>
     <!-- <script src="../js/animations.js"></script> -->
     <!-- <script src="../js/typeEffect.js"></script> -->
     <!-- <script src="../js/testimonials.js"></script> -->
