@@ -24,14 +24,14 @@
     color: white;
 }
 
-.scroll-to-top:hover {
+/* .scroll-to-top:hover {
     transform: scale(1.1) translateY(0);
     box-shadow: 0 6px 25px rgba(233, 30, 99, 0.6);
-}
+} */
 
-.scroll-to-top:active {
+/* .scroll-to-top:active {
     transform: scale(0.95);
-}
+} */
 
 /* Scroll tooltip styling */
 .scroll-tooltip {
@@ -64,10 +64,10 @@
     /* Changed border direction */
 }
 
-.scroll-to-top:hover .scroll-tooltip {
+/* .scroll-to-top:hover .scroll-tooltip {
     opacity: 1;
     visibility: visible;
-}
+} */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
