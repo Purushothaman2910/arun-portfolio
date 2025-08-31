@@ -3,9 +3,10 @@
 /* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
-    /* bottom: 100px; */
-    /* Position above the main FAB */
+    bottom: 40px;
+    /* Same level as main FAB */
     left: 30px;
+    /* Position on left side */
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -33,9 +34,10 @@
 }
 
 /* Scroll tooltip styling */
-/* .scroll-tooltip {
+.scroll-tooltip {
     position: absolute;
-    right: 60px;
+    left: 60px;
+    /* Changed from right to left */
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.8);
@@ -53,24 +55,26 @@
 .scroll-tooltip::after {
     content: '';
     position: absolute;
-    right: -5px;
+    left: -5px;
+    /* Changed from right to left */
     top: 50%;
     transform: translateY(-50%);
     border: 5px solid transparent;
-    border-left-color: rgba(0, 0, 0, 0.8);
-} */
+    border-right-color: rgba(0, 0, 0, 0.8);
+    /* Changed border direction */
+}
 
-/* .scroll-to-top:hover .scroll-tooltip {
+.scroll-to-top:hover .scroll-tooltip {
     opacity: 1;
     visibility: visible;
-} */
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .scroll-to-top {
-        bottom: 90px;
-        /* Adjust for mobile */
-        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        /* Changed from right to left */
     }
 
     .scroll-tooltip {
