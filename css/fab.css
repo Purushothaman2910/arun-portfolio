@@ -1,3 +1,106 @@
+/* Add this to your fab.css file */
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    /* bottom: 100px; */
+    /* Position above the main FAB */
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--logo-gradient);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(233, 30, 99, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(20px);
+    color: white;
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1) translateY(0);
+    box-shadow: 0 6px 25px rgba(233, 30, 99, 0.6);
+}
+
+.scroll-to-top:active {
+    transform: scale(0.95);
+}
+
+/* Scroll tooltip styling */
+/* .scroll-tooltip {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.scroll-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: rgba(0, 0, 0, 0.8);
+} */
+
+/* .scroll-to-top:hover .scroll-tooltip {
+    opacity: 1;
+    visibility: visible;
+} */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 90px;
+        /* Adjust for mobile */
+        right: 20px;
+    }
+
+    .scroll-tooltip {
+        display: none;
+        /* Hide tooltip on mobile */
+    }
+}
+
+/* Animation for scroll button appearance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced arrow icon animation */
+.scroll-to-top svg {
+    transition: transform 0.2s ease;
+}
+
+.scroll-to-top:hover svg {
+    transform: translateY(-2px);
+}
+
 .fab-container {
     position: fixed;
     bottom: 30px;
