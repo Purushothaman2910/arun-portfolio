@@ -133,10 +133,6 @@
     box-shadow: 0 6px 25px rgba(238, 90, 36, 0.6);
 }
 
-.fab-toggle.active {
-    transform: rotate(45deg);
-}
-
 /* Toggle icon */
 .toggle-icon {
     width: 24px;

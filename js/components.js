@@ -133,6 +133,8 @@ const footerTemplate = `
           <li><a href="/pages/index.html" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
           <li><a href="/pages/about.html" class="text-gray-300 hover:text-white transition-colors duration-200">About</a></li>
           <li><a href="../index.html#services" class="text-gray-300 hover:text-white transition-colors duration-200">Services</a></li>
+          <li><a href="/pages/client.html" class="text-gray-300 hover:text-white transition-colors duration-200">Our clients</a></li>
+          <li><a href="/pages/teams.html" class="text-gray-300 hover:text-white transition-colors duration-200">Our team</a></li>
           <li><a href="/pages/contact.html" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a></li>
         </ul>
       </div>
@@ -187,7 +189,7 @@ const fabTemplate = `
   <!-- Contact Icons -->
   <div class="contact-icons" id="contactIcons">
     <!-- Phone -->
-    <a href="tel:+917418655993" class="contact-btn phone-btn">
+    <a href="tel:7418655993" class="contact-btn phone-btn">
       <svg xmlns="http://www.w3.org/2000/svg" 
            width="24" height="24" viewBox="0 0 24 24" 
            fill="none" stroke="currentColor" 
@@ -212,7 +214,7 @@ const fabTemplate = `
     </a>
 
     <!-- Message -->
-    <a href="mailto:contact@akcreativestudio.in" class="contact-btn message-btn">
+    <a href="sms:7418655993" class="contact-btn message-btn">
       <svg xmlns="http://www.w3.org/2000/svg" 
            width="24" height="24" viewBox="0 0 24 24" 
            fill="none" stroke="currentColor" 
@@ -228,9 +230,18 @@ const fabTemplate = `
     </a>
   </div>
 
-  <!-- Main Toggle Button -->
+<!-- Main Toggle Button -->
   <button class="fab-toggle" id="fabToggle">
-    <div class="toggle-icon"></div>
+    <!-- Message Circle Icon (default state) -->
+    <svg id="fab-message-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-icon lucide-message-circle">
+      <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/>
+    </svg>
+    
+    <!-- X Icon (close state) -->
+    <svg id="fab-close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x" style="display: none;">
+      <path d="M18 6 6 18"/>
+      <path d="m6 6 12 12"/>
+    </svg>
   </button>
 </div>
 `;
@@ -356,14 +367,17 @@ function initTheme() {
 }
 
 // Initialize FAB functionality
+// Updated initFAB function to handle icon switching
 function initFAB() {
   const fabToggle = document.getElementById('fabToggle');
   const contactIcons = document.getElementById('contactIcons');
+  const messageIcon = document.getElementById('fab-message-icon');
+  const closeIcon = document.getElementById('fab-close-icon');
   let isOpen = false;
 
   console.log('Initializing FAB...');
 
-  if (fabToggle && contactIcons) {
+  if (fabToggle && contactIcons && messageIcon && closeIcon) {
     // Toggle FAB on click
     fabToggle.addEventListener('click', function () {
       isOpen = !isOpen;
@@ -371,9 +385,15 @@ function initFAB() {
       if (isOpen) {
         contactIcons.classList.add('show');
         fabToggle.classList.add('active');
+        // Switch to close icon
+        messageIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
       } else {
         contactIcons.classList.remove('show');
         fabToggle.classList.remove('active');
+        // Switch back to message icon
+        messageIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
       }
     });
 
@@ -383,6 +403,9 @@ function initFAB() {
         isOpen = false;
         contactIcons.classList.remove('show');
         fabToggle.classList.remove('active');
+        // Switch back to message icon
+        messageIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
       }
     });
 
@@ -396,6 +419,7 @@ function initFAB() {
     console.error('Failed to find FAB elements');
   }
 }
+
 
 
 // Add scroll-to-top functionality to your initFAB function
