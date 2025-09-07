@@ -130,7 +130,7 @@ const footerTemplate = `
       <div>
         <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
         <ul class="space-y-2">
-          <li><a href="/pages/index.html" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
+          <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
           <li><a href="/pages/about.html" class="text-gray-300 hover:text-white transition-colors duration-200">About</a></li>
           <li><a href="../index.html#services" class="text-gray-300 hover:text-white transition-colors duration-200">Services</a></li>
           <li><a href="/pages/client.html" class="text-gray-300 hover:text-white transition-colors duration-200">Our clients</a></li>
